@@ -43,23 +43,22 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
         </div>
       )}
 
-      <div className="relative aspect-[4/3] overflow-hidden bg-stone-50">
+      <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden bg-gradient-to-br from-stone-50 to-stone-100 p-4 sm:p-6">
         {product.image ? (
           <Image
             src={product.image}
             alt={product.name}
             fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            className="object-contain p-3 transition-transform duration-500 group-hover:scale-105 sm:p-5"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
         ) : (
           <ImagePlaceholder
             label="Product image coming soon"
-            className="h-full w-full rounded-none"
+            className="h-full w-full rounded-none bg-transparent"
             iconSize={36}
           />
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
       </div>
 
       <div className="flex flex-1 flex-col p-5">

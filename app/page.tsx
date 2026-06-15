@@ -11,6 +11,8 @@ import {
   Truck,
   MapPin,
   Gem,
+  Clock,
+  BookOpen,
 } from "lucide-react";
 import {
   BUSINESS,
@@ -18,6 +20,7 @@ import {
   WHY_CHOOSE,
   HOW_TO_ORDER,
   POPULAR_PRODUCTS,
+  BLOG_POSTS,
 } from "@/lib/data";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/animated-section";
 import { ProductCard } from "@/components/product-card";
@@ -291,6 +294,61 @@ export default function HomePage() {
                     {item.description}
                   </p>
                 </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </div>
+      </section>
+
+      {/* Blog Highlights */}
+      <section className="bg-stone-100/50 py-24 lg:py-32">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <AnimatedSection className="mb-12 flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
+            <div>
+              <span className="mb-3 inline-block text-sm font-semibold uppercase tracking-wider text-brand">
+                From the Blog
+              </span>
+              <h2 className="font-serif text-3xl font-bold text-stone-900 sm:text-4xl lg:text-5xl">
+                Skincare Tips & Guides
+              </h2>
+            </div>
+            <Link
+              href="/blog"
+              className="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-stone-900 shadow-sm ring-1 ring-stone-200 transition-all hover:bg-stone-900 hover:text-white"
+            >
+              View All Articles
+              <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+            </Link>
+          </AnimatedSection>
+
+          <StaggerContainer className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {BLOG_POSTS.slice(0, 3).map((post) => (
+              <StaggerItem key={post.id}>
+                <Link
+                  href={`/blog/${post.id}`}
+                  className="group flex h-full flex-col rounded-3xl bg-white p-6 shadow-sm shadow-stone-200/50 ring-1 ring-stone-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-stone-200/60 hover:ring-brand/20"
+                >
+                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-brand/10 text-brand transition-colors group-hover:bg-brand group-hover:text-white">
+                    <BookOpen size={22} />
+                  </div>
+                  <div className="mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-gold-dark">
+                    {post.category}
+                    <span className="flex items-center gap-1 text-stone-400">
+                      <Clock size={12} />
+                      {post.readTime}
+                    </span>
+                  </div>
+                  <h3 className="mb-3 flex-1 font-serif text-xl font-semibold text-stone-900">
+                    {post.title}
+                  </h3>
+                  <p className="mb-5 text-sm leading-relaxed text-stone-600">
+                    {post.excerpt}
+                  </p>
+                  <span className="inline-flex items-center gap-1 text-sm font-semibold text-brand">
+                    Read article
+                    <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+                  </span>
+                </Link>
               </StaggerItem>
             ))}
           </StaggerContainer>

@@ -14,7 +14,17 @@ import { CTASection } from "@/components/cta-section";
 export const metadata: Metadata = {
   title: "Contact Missfiah Organic Products | Kariakoo Dar es Salaam",
   description:
-    "Contact Missfiah Organic Products in Kariakoo, Dar es Salaam. Order through WhatsApp or connect with us on Instagram.",
+    "Contact Missfiah Organic Products in Kariakoo, Dar es Salaam. Order skincare and beauty products through WhatsApp or connect with us on Instagram.",
+  keywords: [
+    "Contact Missfiah",
+    "Missfiah WhatsApp",
+    "order skincare Dar es Salaam",
+    "Kariakoo beauty shop",
+    "Missfiah Instagram",
+  ],
+  alternates: {
+    canonical: "/contact",
+  },
 };
 
 export default function ContactPage() {

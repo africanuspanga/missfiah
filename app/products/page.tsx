@@ -8,7 +8,20 @@ import { CTASection } from "@/components/cta-section";
 export const metadata: Metadata = {
   title: "Shop Missfiah Organic Oils, Soaps, Serums & Shower Gels",
   description:
-    "Browse Missfiah Organic Products including Vitamin C oil, 24K Gold oil, Retinol oil, Almond oil, Carrot oil, glow serum, soaps, and shower gels.",
+    "Shop Missfiah Organic Products online. Buy Vitamin C oil, 24K Gold oil, Retinol oil, Almond oil, Carrot oil, glow serum, organic soaps, and shower gels in Tanzania.",
+  keywords: [
+    "Missfiah shop",
+    "buy organic oil Tanzania",
+    "glow serum",
+    "organic soap",
+    "shower gel",
+    "Vitamin C oil",
+    "24K Gold oil",
+    "skincare products Tanzania",
+  ],
+  alternates: {
+    canonical: "/products",
+  },
 };
 
 export default function ProductsPage() {

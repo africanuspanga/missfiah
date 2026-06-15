@@ -1,0 +1,88 @@
+import { BUSINESS, ALL_PRODUCTS } from "@/lib/data";
+
+export function JsonLd() {
+  const siteUrl = "https://missfiah.vercel.app";
+
+  const organizationData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: BUSINESS.name,
+    url: siteUrl,
+    logo: `${siteUrl}${BUSINESS.logo}`,
+    description:
+      "Organic-inspired beauty and skincare products based in Kariakoo, Dar es Salaam, Tanzania.",
+    sameAs: [BUSINESS.instagramLink],
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "Customer Service",
+      availableLanguage: ["English", "Swahili"],
+    },
+  };
+
+  const localBusinessData = {
+    "@context": "https://schema.org",
+    "@type": "BeautySalon",
+    name: BUSINESS.name,
+    image: `${siteUrl}${BUSINESS.logo}`,
+    url: siteUrl,
+    telephone: BUSINESS.whatsapp,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Kariakoo",
+      addressLocality: "Dar es Salaam",
+      addressCountry: "TZ",
+    },
+    priceRange: "$$",
+  };
+
+  const websiteData = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: BUSINESS.name,
+    url: siteUrl,
+    potentialAction: {
+      "@type": "SearchAction",
+      target: `${siteUrl}/products`,
+      "query-input": "required name=search_term_string",
+    },
+  };
+
+  const productListData = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: ALL_PRODUCTS.map((product, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      url: `${siteUrl}/products`,
+      name: product.name,
+      description: product.description,
+      offers: {
+        "@type": "Offer",
+        price: product.price,
+        priceCurrency: "TZS",
+        availability: "https://schema.org/InStock",
+      },
+    })),
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productListData) }}
+      />
+    </>
+  );
+}

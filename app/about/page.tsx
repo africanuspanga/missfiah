@@ -8,7 +8,17 @@ import { CTASection } from "@/components/cta-section";
 export const metadata: Metadata = {
   title: "About Missfiah Organic Products | Beauty Brand in Dar es Salaam",
   description:
-    "Learn about Missfiah Organic Products, a Dar es Salaam beauty and skincare brand offering organic-inspired oils, soaps, serums, and shower gels.",
+    "Learn about Missfiah Organic Products, a Dar es Salaam beauty and skincare brand offering organic-inspired oils, soaps, serums, and shower gels in Kariakoo, Tanzania.",
+  keywords: [
+    "About Missfiah",
+    "Missfiah Organic Products",
+    "beauty brand Dar es Salaam",
+    "skincare brand Kariakoo",
+    "organic skincare Tanzania",
+  ],
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 const OFFERINGS = [

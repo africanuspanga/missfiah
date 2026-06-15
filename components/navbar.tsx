@@ -45,13 +45,13 @@ export function Navbar() {
               href="/"
               className="flex items-center gap-2 transition-opacity hover:opacity-90"
             >
-              <div className="relative h-10 w-28 sm:h-11 sm:w-32">
+              <div className="relative h-12 w-36 sm:h-14 sm:w-44">
                 <Image
                   src={BUSINESS.logo}
                   alt={BUSINESS.name}
                   fill
                   className="object-contain"
-                  sizes="(max-width: 640px) 120px, 150px"
+                  sizes="(max-width: 640px) 150px, 180px"
                   priority
                 />
               </div>
@@ -125,13 +125,13 @@ export function Navbar() {
               className="fixed right-0 top-0 z-50 h-full w-[280px] bg-white p-6 shadow-2xl md:hidden"
             >
               <div className="mb-8 flex items-center justify-between">
-                <div className="relative h-10 w-28">
+                <div className="relative h-12 w-36">
                   <Image
                     src={BUSINESS.logo}
                     alt={BUSINESS.name}
                     fill
                     className="object-contain"
-                    sizes="120px"
+                    sizes="150px"
                   />
                 </div>
                 <button

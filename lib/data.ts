@@ -21,6 +21,15 @@ export type Category = {
   products: Product[];
 };
 
+export type BlogPost = {
+  id: string;
+  title: string;
+  excerpt: string;
+  category: string;
+  readTime: string;
+  content: string;
+};
+
 export const BUSINESS = {
   name: "Missfiah Organic Products",
   shortName: "Missfiah",
@@ -233,13 +242,23 @@ export const HOW_TO_ORDER = [
   },
 ];
 
-export const BLOG_POSTS = [
+export const BLOG_POSTS: BlogPost[] = [
   {
     id: "daily-body-care-routine",
     title: "How to Build a Simple Daily Body Care Routine",
     excerpt:
       "A beginner-friendly guide on using shower gel, soap, oil, and serum in a simple daily routine.",
     category: "Routine",
+    readTime: "3 min read",
+    content: `A good body care routine does not have to be complicated. With just four steps, you can keep your skin feeling clean, soft, and refreshed every day.
+
+Start with a warm shower and a gentle shower gel. This washes away sweat, dirt, and oil that build up on the skin. In the evening, you can also use a body soap for an extra clean feeling.
+
+After your shower, pat your skin dry with a soft towel. While the skin is still slightly damp, apply a body oil. This helps lock in moisture and gives the skin a smooth, glowing look.
+
+Next, use a serum if you want to add a brightening step. A small amount massaged into the skin can support a more radiant appearance over time.
+
+Finally, drink water and be consistent. A simple daily routine works best when you follow it regularly.`,
   },
   {
     id: "body-oil-vs-lotion",
@@ -247,6 +266,16 @@ export const BLOG_POSTS = [
     excerpt:
       "A simple explanation of how body oils and lotions fit into skincare routines.",
     category: "Guide",
+    readTime: "3 min read",
+    content: `Body oils and body lotions both help the skin feel soft, but they work in different ways.
+
+Body lotions are usually water-based. They feel light and absorb quickly. They are a good choice for a quick morning routine or when the weather is warm.
+
+Body oils are thicker and richer. They create a protective layer on the skin that helps it stay hydrated for longer. Oils are great after a shower or before bed.
+
+If your skin often feels dry, a body oil can give you longer-lasting softness. If you prefer something light during the day, a lotion may feel better.
+
+Many people use both. They apply lotion in the morning and oil in the evening. Try different options to see what your skin likes best.`,
   },
   {
     id: "use-oil-after-shower",
@@ -254,6 +283,16 @@ export const BLOG_POSTS = [
     excerpt:
       "A practical guide on applying body oil after bathing for a soft and glowing appearance.",
     category: "Tips",
+    readTime: "3 min read",
+    content: `The best time to apply body oil is right after a shower. Your skin is clean and slightly damp, which helps the oil spread easily and absorb well.
+
+First, take a warm shower using your favorite Missfiah shower gel or soap. After showering, gently pat your skin with a towel. Do not rub too hard.
+
+Pour a small amount of Missfiah Organic Oil into your palm. Rub your hands together to warm it up. Then massage it into your arms, legs, and body using gentle, upward motions.
+
+Pay extra attention to areas that feel dry, like elbows and knees. Allow the oil a few minutes to settle before getting dressed.
+
+Using oil after every shower can help your skin look smoother, softer, and more glowing over time.`,
   },
   {
     id: "vitamin-c-popular",
@@ -261,6 +300,16 @@ export const BLOG_POSTS = [
     excerpt:
       "A simple article explaining why many skincare lovers choose Vitamin C-inspired products.",
     category: "Ingredients",
+    readTime: "3 min read",
+    content: `Vitamin C is one of the most talked-about ingredients in beauty and skincare. It is popular because many people believe it helps the skin look brighter and fresher.
+
+Vitamin C-inspired products are often used in body oils, serums, and shower gels. They are designed to support a glowing, healthy-looking skin appearance.
+
+These products are usually gentle enough for daily use. They fit easily into a morning or evening routine and can be paired with other products like moisturizers and sun protection.
+
+When choosing a Vitamin C product, look for one that feels good on your skin and is easy to use every day. Consistency is what brings the best results.
+
+Missfiah Vitamin C Organic Oil and Vitamin C Whitening Shower Gel are great options for anyone who wants to add this ingredient to their body care routine.`,
   },
   {
     id: "choose-right-oil",
@@ -268,6 +317,16 @@ export const BLOG_POSTS = [
     excerpt:
       "A guide comparing Vitamin C, Almond, Carrot, Retinol, and 24K Gold options.",
     category: "Guide",
+    readTime: "3 min read",
+    content: `Missfiah Organic Oils come in different variants, so you can choose one that fits your routine.
+
+Vitamin C Organic Oil is a good choice if you want a fresh, bright look. 24K Gold Organic Oil offers a more luxurious feel. Retinol Organic Oil is popular with people who want an advanced-looking skincare routine.
+
+Almond Organic Oil is gentle and helps the skin feel soft and nourished. Carrot Organic Oil is rich and gives the skin a warm, glowing appearance.
+
+Think about what your skin needs and what you enjoy using. You can also switch between oils depending on the season or time of day.
+
+If you are unsure, send us a message on WhatsApp and we will help you choose.`,
   },
   {
     id: "consistent-routine-benefits",
@@ -275,6 +334,16 @@ export const BLOG_POSTS = [
     excerpt:
       "An article about consistency, hydration, cleansing, and daily self-care.",
     category: "Wellness",
+    readTime: "3 min read",
+    content: `A consistent body care routine is one of the simplest ways to keep your skin looking and feeling its best.
+
+Cleansing every day removes dirt, sweat, and oil. This helps the skin stay fresh and reduces the chance of clogged pores or irritation.
+
+Moisturizing with oils or lotions keeps the skin soft and hydrated. When the skin is well-hydrated, it looks smoother and healthier.
+
+A routine also gives you a few minutes of self-care each day. Taking time for yourself can help you feel more confident and relaxed.
+
+The key is to be patient. Results come from doing small things regularly, not from using many products once in a while.`,
   },
   {
     id: "shower-gel-or-soap",
@@ -282,6 +351,16 @@ export const BLOG_POSTS = [
     excerpt:
       "A helpful guide explaining how both products can be used depending on preference.",
     category: "Guide",
+    readTime: "3 min read",
+    content: `Both shower gel and soap are good for cleansing the skin. The right choice depends on your skin type and personal preference.
+
+Shower gel has a liquid texture and usually creates a rich lather. It is easy to use with a sponge or loofah and feels refreshing.
+
+Soap is solid and long-lasting. It is a simple, classic option for daily washing. Many people like the clean feeling soap provides.
+
+If you have dry skin, a moisturizing shower gel may feel gentler. If you prefer a deep clean, a soap bar might be your favorite.
+
+You can also use both. Some people use soap in the morning and shower gel in the evening. Choose what works for your lifestyle.`,
   },
   {
     id: "fresh-in-hot-weather",
@@ -289,6 +368,16 @@ export const BLOG_POSTS = [
     excerpt:
       "Tips for customers in Tanzania on cleansing, moisturizing, and staying fresh.",
     category: "Tips",
+    readTime: "3 min read",
+    content: `Hot weather can make the skin feel sticky and tired. With the right routine, you can stay fresh and comfortable all day.
+
+Start your morning with a cool shower and a refreshing shower gel. This wakes up the skin and removes sweat from the night.
+
+After showering, use a light body oil or skip heavy products if your skin feels oily. A small amount of Missfiah Organic Oil can still keep the skin soft without feeling greasy.
+
+During the day, wear loose clothing and drink plenty of water. If you spend time outside, protect your skin from strong sun.
+
+In the evening, cleanse again and apply your favorite oil or serum before bed. This helps the skin recover overnight.`,
   },
   {
     id: "what-makes-glow-product",
@@ -296,6 +385,16 @@ export const BLOG_POSTS = [
     excerpt:
       "A simple guide on texture, routine, ingredients, and customer expectations.",
     category: "Ingredients",
+    readTime: "3 min read",
+    content: `A good glow product is one that makes your skin look healthy, smooth, and radiant without feeling heavy or greasy.
+
+Texture matters. The product should spread easily and absorb well. If it feels too thick or sticky, you may not enjoy using it every day.
+
+The ingredients should support a bright appearance. Look for products inspired by Vitamin C, gold, turmeric, or other popular beauty ingredients.
+
+A good glow product also fits into your routine. It should be easy to apply and work well with your other products.
+
+Most importantly, use it consistently. A glow product works best when it becomes a regular part of your daily body care routine.`,
   },
   {
     id: "how-to-order-online",
@@ -303,6 +402,16 @@ export const BLOG_POSTS = [
     excerpt:
       "A customer guide explaining how to browse, add to cart, and complete orders via WhatsApp.",
     category: "Ordering",
+    readTime: "3 min read",
+    content: `Ordering Missfiah Organic Products online is quick and easy.
+
+First, visit our Products page and browse our collection. You will find organic oils, glow serums, soaps, and shower gels.
+
+Click "Add to Cart" on the items you want. You can view your cart at any time by clicking the cart icon in the top right corner.
+
+When you are ready, click "Checkout on WhatsApp." This opens a WhatsApp message with your order details already filled in.
+
+Send the message to us. We will confirm availability, share payment details, and arrange delivery. You can also message us directly on WhatsApp if you have questions before ordering.`,
   },
 ];
 

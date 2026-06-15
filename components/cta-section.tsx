@@ -34,7 +34,7 @@ export function CTASection({
               </p>
               <WhatsAppButton
                 message={`Hello ${BUSINESS.name}, I would like to place an order.`}
-                className="bg-white text-brand hover:bg-gold hover:text-stone-900"
+                className="bg-gold text-stone-900 hover:bg-gold-dark hover:text-stone-900"
               >
                 <CheckCircle2 size={20} />
                 {buttonText}

@@ -31,7 +31,7 @@ export function WhatsAppButton({
     outline:
       "border-2 border-[#25D366] text-[#25D366] px-6 py-3 hover:bg-[#25D366] hover:text-white hover:-translate-y-0.5",
     floating:
-      "fixed bottom-6 right-6 z-50 h-14 w-14 rounded-full bg-[#25D366] text-white shadow-xl shadow-[#25D366]/30 hover:scale-110 hover:bg-[#128C7E]",
+      "fixed bottom-6 right-6 z-50 h-16 w-16 overflow-hidden rounded-full shadow-xl shadow-stone-900/20 hover:scale-110 hover:shadow-2xl",
   };
 
   return (
@@ -42,25 +42,23 @@ export function WhatsAppButton({
       className={`${baseStyles} ${variants[variant]} ${className}`}
       aria-label="Chat on WhatsApp"
     >
-      <span className="relative flex shrink-0 items-center justify-center">
-        {variant === "floating" ? (
-          <Image
-            src={BUSINESS.whatsappLogo}
-            alt="WhatsApp"
-            width={28}
-            height={28}
-            className="object-contain"
-          />
-        ) : (
-          <Image
-            src={BUSINESS.whatsappLogo}
-            alt="WhatsApp"
-            width={22}
-            height={22}
-            className="object-contain"
-          />
-        )}
-      </span>
+      {variant === "floating" ? (
+        <Image
+          src={BUSINESS.whatsappLogo}
+          alt="WhatsApp"
+          fill
+          className="object-cover"
+          sizes="64px"
+        />
+      ) : (
+        <Image
+          src={BUSINESS.whatsappLogo}
+          alt="WhatsApp"
+          width={22}
+          height={22}
+          className="object-contain"
+        />
+      )}
       {children}
     </a>
   );
