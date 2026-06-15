@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { ShoppingBag, Check, Sparkles } from "lucide-react";
+import { ShoppingBag, Check } from "lucide-react";
 import { Product, formatPrice } from "@/lib/data";
 import { ImagePlaceholder } from "./image-placeholder";
 import { useCart } from "./cart-provider";
@@ -37,8 +37,7 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
       className="group relative flex flex-col overflow-hidden rounded-3xl bg-white shadow-sm shadow-stone-200/50 ring-1 ring-stone-100 transition-shadow duration-300 hover:shadow-xl hover:shadow-stone-200/60 hover:ring-brand/20"
     >
       {product.popular && (
-        <div className="absolute left-4 top-4 z-20 flex items-center gap-1 rounded-full bg-gold px-3 py-1 text-xs font-semibold text-stone-900 shadow-sm">
-          <Sparkles size={12} className="text-brand" />
+        <div className="absolute left-4 top-4 z-20 flex items-center rounded-full bg-gold px-3 py-1 text-xs font-semibold text-stone-900 shadow-sm">
           Popular
         </div>
       )}

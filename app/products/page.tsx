@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Sparkles } from "lucide-react";
 import { CATEGORIES } from "@/lib/data";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/animated-section";
 import { ProductCard } from "@/components/product-card";
@@ -59,8 +58,7 @@ export default function ProductsPage() {
                 <AnimatedSection className="mb-10">
                   <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
                     <div>
-                      <span className="mb-2 inline-flex items-center gap-1.5 rounded-full bg-brand/10 px-3 py-1 text-xs font-semibold text-brand">
-                        <Sparkles size={12} />
+                      <span className="mb-2 inline-flex items-center rounded-full bg-brand/10 px-3 py-1 text-xs font-semibold text-brand">
                         Category
                       </span>
                       <h2 className="font-serif text-3xl font-bold text-stone-900 sm:text-4xl">

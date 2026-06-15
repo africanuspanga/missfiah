@@ -1,16 +1,16 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
-  Sparkles,
   ShoppingBag,
   ArrowRight,
   Droplets,
-  Leaf,
   Truck,
   MapPin,
   Gem,
+  Star,
   Clock,
   BookOpen,
 } from "lucide-react";
@@ -24,6 +24,7 @@ import {
 } from "@/lib/data";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/animated-section";
 import { ProductCard } from "@/components/product-card";
+import { ImagePlaceholder } from "@/components/image-placeholder";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 import { CTASection } from "@/components/cta-section";
 
@@ -49,9 +50,8 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="mb-6 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white backdrop-blur-md"
+            className="mb-6 inline-flex items-center rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white backdrop-blur-md"
           >
-            <Sparkles size={16} className="text-gold" />
             Premium Organic Beauty
           </motion.div>
 
@@ -156,29 +156,48 @@ export default function HomePage() {
             </h2>
           </AnimatedSection>
 
-          <StaggerContainer className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {CATEGORIES.map((category) => (
-              <StaggerItem key={category.id}>
-                <Link
-                  href={`/products#${category.id}`}
-                  className="group flex h-full flex-col rounded-3xl bg-white p-6 shadow-sm shadow-stone-200/50 ring-1 ring-stone-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-stone-200/60 hover:ring-brand/20"
-                >
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-brand/10 text-brand transition-colors group-hover:bg-brand group-hover:text-white">
-                    <Leaf size={24} />
-                  </div>
-                  <h3 className="mb-2 font-serif text-xl font-semibold text-stone-900">
-                    {category.title}
-                  </h3>
-                  <p className="mb-4 flex-1 text-sm leading-relaxed text-stone-600">
-                    {category.description}
-                  </p>
-                  <div className="flex items-center gap-1 text-sm font-semibold text-brand">
-                    View products
-                    <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-                  </div>
-                </Link>
-              </StaggerItem>
-            ))}
+          <StaggerContainer className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {CATEGORIES.map((category) => {
+              const featuredImage = category.products.find((p) => p.image)?.image;
+              return (
+                <StaggerItem key={category.id}>
+                  <Link
+                    href={`/products#${category.id}`}
+                    className="group flex h-full flex-col overflow-hidden rounded-3xl bg-white shadow-sm shadow-stone-200/50 ring-1 ring-stone-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-stone-200/60 hover:ring-brand/20"
+                  >
+                    <div className="relative flex aspect-[4/3] items-center justify-center bg-gradient-to-br from-stone-50 to-stone-100 p-4">
+                      {featuredImage ? (
+                        <Image
+                          src={featuredImage}
+                          alt={category.title}
+                          fill
+                          className="object-contain p-4 transition-transform duration-500 group-hover:scale-105"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                        />
+                      ) : (
+                        <ImagePlaceholder
+                          label="Category image coming soon"
+                          className="h-full w-full bg-transparent"
+                          iconSize={36}
+                        />
+                      )}
+                    </div>
+                    <div className="flex flex-1 flex-col p-6">
+                      <h3 className="mb-2 font-serif text-xl font-semibold text-stone-900">
+                        {category.title}
+                      </h3>
+                      <p className="mb-4 flex-1 text-sm leading-relaxed text-stone-600">
+                        {category.description}
+                      </p>
+                      <div className="flex items-center gap-1 text-sm font-semibold text-brand">
+                        View products
+                        <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+                      </div>
+                    </div>
+                  </Link>
+                </StaggerItem>
+              );
+            })}
           </StaggerContainer>
         </div>
       </section>
@@ -212,7 +231,7 @@ export default function HomePage() {
               {WHY_CHOOSE.map((item, i) => {
                 const icons = [
                   <Droplets key="d" size={22} />,
-                  <Sparkles key="s" size={22} />,
+                  <Star key="s" size={22} />,
                   <Truck key="t" size={22} />,
                   <MapPin key="m" size={22} />,
                   <Gem key="g" size={22} />,
