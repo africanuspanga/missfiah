@@ -19,7 +19,6 @@ import {
   CATEGORIES,
   WHY_CHOOSE,
   HOW_TO_ORDER,
-  POPULAR_PRODUCTS,
   BLOG_POSTS,
 } from "@/lib/data";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/animated-section";
@@ -278,8 +277,8 @@ export default function HomePage() {
             </Link>
           </AnimatedSection>
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {POPULAR_PRODUCTS.map((product, i) => (
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {CATEGORIES.find((c) => c.id === "organic-oil")?.products.map((product, i) => (
               <ProductCard key={product.id} product={product} index={i} />
             ))}
           </div>
