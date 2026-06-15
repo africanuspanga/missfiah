@@ -49,6 +49,7 @@ export function WhatsAppButton({
           fill
           className="object-cover"
           sizes="64px"
+          priority
         />
       ) : (
         <Image
