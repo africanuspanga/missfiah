@@ -14,12 +14,25 @@ export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
   const { totalItems } = useCart();
+  const isHome = pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Lock body scroll when mobile menu is open to prevent background jitter
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
 
   return (
     <>
@@ -28,15 +41,13 @@ export function Navbar() {
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled
-            ? "py-3"
-            : "py-5"
+          isScrolled ? "py-3" : "py-5"
         }`}
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <nav
             className={`flex items-center justify-between rounded-full px-5 py-3 transition-all duration-300 ${
-              isScrolled
+              isScrolled || !isHome
                 ? "glass shadow-lg shadow-stone-900/5"
                 : "bg-transparent"
             }`}
@@ -64,15 +75,21 @@ export function Navbar() {
                     href={link.href}
                     className={`relative rounded-full px-4 py-2 text-sm font-medium transition-colors ${
                       pathname === link.href
-                        ? "text-brand"
-                        : "text-stone-600 hover:text-stone-900"
+                        ? isHome && !isScrolled
+                          ? "text-gold"
+                          : "text-brand"
+                        : isHome && !isScrolled
+                          ? "text-white/90 hover:text-white"
+                          : "text-stone-600 hover:text-stone-900"
                     }`}
                   >
                     {link.label}
                     {pathname === link.href && (
                       <motion.span
                         layoutId="nav-pill"
-                        className="absolute inset-0 -z-10 rounded-full bg-brand/10"
+                        className={`absolute inset-0 -z-10 rounded-full ${
+                          isHome && !isScrolled ? "bg-white/15" : "bg-brand/10"
+                        }`}
                         transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                       />
                     )}

@@ -44,7 +44,7 @@ export default function CartPage() {
 
   return (
     <>
-      <section className="min-h-screen bg-gradient-to-b from-stone-50 to-white py-24 sm:py-28 lg:py-32">
+      <section className="min-h-[100dvh] bg-gradient-to-b from-stone-50 to-white py-24 sm:py-28 lg:py-32">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="mb-8 text-center sm:mb-10">
             <h1 className="font-serif text-3xl font-bold text-stone-900 sm:text-4xl lg:text-5xl">

@@ -31,7 +31,7 @@ export default function HomePage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
+      <section className="relative flex min-h-[100dvh] items-center justify-center overflow-hidden">
         <video
           autoPlay
           muted

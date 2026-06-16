@@ -19,7 +19,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://missfiah.vercel.app"),
+  metadataBase: new URL("https://www.missfiah.co.tz"),
   title: {
     default: "Missfiah Organic Products | Organic Beauty & Skincare in Tanzania",
     template: "%s | Missfiah Organic Products",
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_TZ",
     siteName: "Missfiah Organic Products",
-    url: "https://missfiah.vercel.app",
+    url: "https://www.missfiah.co.tz",
     images: [
       {
         url: "/Logo.png",
@@ -104,8 +104,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-scroll-behavior="smooth" className={`${inter.variable} ${playfair.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col font-sans">
+    <html lang="en" data-scroll-behavior="smooth" className={`${inter.variable} ${playfair.variable} h-full overflow-x-clip antialiased`}>
+      <body className="min-h-full flex flex-col overflow-x-clip font-sans touch-pan-y">
         <CartProvider>
           <Navbar />
           <main className="flex-1">{children}</main>

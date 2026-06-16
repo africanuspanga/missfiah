@@ -1,27 +1,32 @@
 import { BUSINESS, ALL_PRODUCTS } from "@/lib/data";
 
 export function JsonLd() {
-  const siteUrl = "https://missfiah.vercel.app";
+  const siteUrl = "https://www.missfiah.co.tz";
 
   const organizationData = {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": `${siteUrl}/#organization`,
     name: BUSINESS.name,
     url: siteUrl,
     logo: `${siteUrl}${BUSINESS.logo}`,
     description:
       "Organic-inspired beauty and skincare products based in Kariakoo, Dar es Salaam, Tanzania.",
     sameAs: [BUSINESS.instagramLink],
-    contactPoint: {
-      "@type": "ContactPoint",
-      contactType: "Customer Service",
-      availableLanguage: ["English", "Swahili"],
-    },
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        contactType: "Customer Service",
+        telephone: BUSINESS.whatsapp,
+        availableLanguage: ["English", "Swahili"],
+      },
+    ],
   };
 
   const localBusinessData = {
     "@context": "https://schema.org",
     "@type": "BeautySalon",
+    "@id": `${siteUrl}/#localbusiness`,
     name: BUSINESS.name,
     image: `${siteUrl}${BUSINESS.logo}`,
     url: siteUrl,
@@ -38,11 +43,15 @@ export function JsonLd() {
   const websiteData = {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": `${siteUrl}/#website`,
     name: BUSINESS.name,
     url: siteUrl,
     potentialAction: {
       "@type": "SearchAction",
-      target: `${siteUrl}/products`,
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${siteUrl}/products`,
+      },
       "query-input": "required name=search_term_string",
     },
   };
@@ -53,7 +62,7 @@ export function JsonLd() {
     itemListElement: ALL_PRODUCTS.map((product, index) => ({
       "@type": "ListItem",
       position: index + 1,
-      url: `${siteUrl}/products`,
+      url: `${siteUrl}/products#${product.id}`,
       name: product.name,
       description: product.description,
       offers: {
@@ -61,6 +70,7 @@ export function JsonLd() {
         price: product.price,
         priceCurrency: "TZS",
         availability: "https://schema.org/InStock",
+        url: `${siteUrl}/products#${product.id}`,
       },
     })),
   };

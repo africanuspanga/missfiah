@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://missfiah.vercel.app/sitemap.xml",
+    sitemap: "https://www.missfiah.co.tz/sitemap.xml",
   };
 }
