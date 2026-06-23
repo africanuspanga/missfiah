@@ -254,6 +254,35 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Shop Our Products Section */}
+      <section className="bg-gradient-to-b from-stone-50 to-white py-24 lg:py-32">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <AnimatedSection className="mb-16 flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
+            <div>
+              <span className="mb-3 inline-block text-sm font-semibold uppercase tracking-wider text-brand">
+                Shop Now
+              </span>
+              <h2 className="font-serif text-3xl font-bold text-stone-900 sm:text-4xl lg:text-5xl">
+                Shop Our Products
+              </h2>
+            </div>
+            <Link
+              href="/products"
+              className="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-stone-900 shadow-sm ring-1 ring-stone-200 transition-all hover:bg-stone-900 hover:text-white"
+            >
+              View All Products
+              <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+            </Link>
+          </AnimatedSection>
+
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {ALL_PRODUCTS.map((product, i) => (
+              <ProductCard key={product.id} product={product} index={i} />
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Why Choose Section */}
       <section className="py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -305,35 +334,6 @@ export default function HomePage() {
                 );
               })}
             </StaggerContainer>
-          </div>
-        </div>
-      </section>
-
-      {/* Shop Our Products Section */}
-      <section className="bg-gradient-to-b from-stone-50 to-white py-24 lg:py-32">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <AnimatedSection className="mb-16 flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
-            <div>
-              <span className="mb-3 inline-block text-sm font-semibold uppercase tracking-wider text-brand">
-                Shop Now
-              </span>
-              <h2 className="font-serif text-3xl font-bold text-stone-900 sm:text-4xl lg:text-5xl">
-                Shop Our Products
-              </h2>
-            </div>
-            <Link
-              href="/products"
-              className="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-stone-900 shadow-sm ring-1 ring-stone-200 transition-all hover:bg-stone-900 hover:text-white"
-            >
-              View All Products
-              <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-            </Link>
-          </AnimatedSection>
-
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {ALL_PRODUCTS.map((product, i) => (
-              <ProductCard key={product.id} product={product} index={i} />
-            ))}
           </div>
         </div>
       </section>
