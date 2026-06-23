@@ -2,10 +2,12 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { ShoppingBag, Check } from "lucide-react";
-import { Product, formatPrice } from "@/lib/data";
+import { useRouter } from "next/navigation";
+import { ShoppingBag, Check, Info } from "lucide-react";
+import { Product, getProductPopup } from "@/lib/data";
 import { ImagePlaceholder } from "./image-placeholder";
 import { useCart } from "./cart-provider";
+import { ProductPopup } from "./product-popup";
 import { useState } from "react";
 
 interface ProductCardProps {
@@ -15,12 +17,18 @@ interface ProductCardProps {
 
 export function ProductCard({ product, index = 0 }: ProductCardProps) {
   const { addItem } = useCart();
+  const router = useRouter();
   const [added, setAdded] = useState(false);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const popup = getProductPopup(product.id);
 
   const handleAdd = () => {
     addItem(product);
     setAdded(true);
-    setTimeout(() => setAdded(false), 1500);
+    setTimeout(() => {
+      setAdded(false);
+      router.push("/cart");
+    }, 600);
   };
 
   return (
@@ -70,19 +78,17 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
         <p className="mb-4 line-clamp-2 flex-1 text-sm leading-relaxed text-stone-600">
           {product.description}
         </p>
-        <div className="flex items-end justify-between gap-3">
-          <div>
-            <div className="font-serif text-xl font-bold text-stone-900">
-              {formatPrice(product.price)}
+        <div className="space-y-3">
+          {product.size && (
+            <div className="text-xs font-medium text-stone-500">
+              Size: {product.size}
             </div>
-            {product.size && (
-              <div className="text-xs text-stone-500">{product.size}</div>
-            )}
-          </div>
+          )}
+
           <motion.button
             onClick={handleAdd}
-            whileTap={{ scale: 0.96 }}
-            className={`flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 ${
+            whileTap={{ scale: 0.98 }}
+            className={`flex w-full items-center justify-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 ${
               added
                 ? "bg-brand text-white"
                 : "bg-stone-900 text-white hover:bg-brand"
@@ -90,10 +96,30 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
             aria-label={`Add ${product.name} to cart`}
           >
             {added ? <Check size={16} /> : <ShoppingBag size={16} />}
-            {added ? "Added" : "Add"}
+            {added ? "Added" : "Add to Cart"}
           </motion.button>
+
+          {popup && popup.status !== "awaiting-product-information" && (
+            <motion.button
+              onClick={() => setIsPopupOpen(true)}
+              whileTap={{ scale: 0.98 }}
+              className="flex w-full items-center justify-center gap-2 rounded-full border border-stone-200 bg-white px-4 py-2.5 text-sm font-semibold text-stone-700 shadow-sm transition-all duration-300 hover:border-brand/30 hover:bg-brand/5 hover:text-brand focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
+              aria-label={`Learn more about ${product.name}`}
+            >
+              <Info size={16} />
+              Learn more
+            </motion.button>
+          )}
         </div>
       </div>
+
+      {popup && popup.status !== "awaiting-product-information" && (
+        <ProductPopup
+          popup={popup}
+          isOpen={isPopupOpen}
+          onClose={() => setIsPopupOpen(false)}
+        />
+      )}
     </motion.div>
   );
 }

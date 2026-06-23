@@ -7,7 +7,7 @@ import { CTASection } from "@/components/cta-section";
 export const metadata: Metadata = {
   title: "Shop Missfiah Organic Oils, Soaps, Serums & Shower Gels",
   description:
-    "Shop Missfiah Organic Products online. Buy Vitamin C oil, 24K Gold oil, Retinol oil, Almond oil, Carrot oil, glow serum, organic soaps, and shower gels in Tanzania.",
+    "Shop Missfiah Organic Products online. Buy body oils, glow serum, organic soaps, and shower gels. Order via WhatsApp for delivery across Dar es Salaam and Tanzania.",
   keywords: [
     "Missfiah shop",
     "buy organic oil Tanzania",
@@ -16,10 +16,32 @@ export const metadata: Metadata = {
     "shower gel",
     "Vitamin C oil",
     "24K Gold oil",
+    "Retinol oil",
+    "Almond oil",
+    "Turmeric soap",
+    "Kojic soap",
+    "Glutathione soap",
+    "whitening shower gel",
     "skincare products Tanzania",
+    "beauty products Dar es Salaam",
+    "Kariakoo skincare",
+    "WhatsApp order skincare Tanzania",
   ],
   alternates: {
     canonical: "/products",
+  },
+  openGraph: {
+    title: "Shop Missfiah Organic Oils, Soaps, Serums & Shower Gels",
+    description:
+      "Explore the full Missfiah collection: body oils, glow serums, organic soaps, and shower gels. Order easily through WhatsApp.",
+    url: "/products",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Shop Missfiah Organic Oils, Soaps, Serums & Shower Gels",
+    description:
+      "Explore the full Missfiah collection and order your favourite skincare products through WhatsApp.",
   },
 };
 

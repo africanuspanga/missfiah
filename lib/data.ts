@@ -34,7 +34,8 @@ export const BUSINESS = {
   name: "Missfiah Organic Products",
   shortName: "Missfiah",
   tagline: "Natural Glow, Everyday Confidence",
-  location: "Kariakoo, Dar es Salaam, Tanzania",
+  location: "34 Mafia St, Kariakoo, Dar es Salaam, Tanzania",
+  mapLink: "https://maps.app.goo.gl/XqAsGU566zhbSNHVA",
   whatsapp: "+255679294595",
   whatsappLink: "https://wa.me/+255679294595",
   instagram: "@missfiahproducts_",
@@ -95,17 +96,8 @@ export const CATEGORIES: Category[] = [
         size: "300ml",
         price: UNIFORM_PRICE,
         description:
-          "An almond-inspired body oil for smooth, soft, and nourished-looking skin.",
+          "A nourishing face and body oil that helps moisturize, soften and condition dry-looking skin. Ideal for daily body care and massage, it leaves the skin feeling smooth, supple and naturally radiant.",
         image: "/Missfiah-almond.png",
-      },
-      {
-        id: "carrot-oil",
-        name: "Carrot Organic Oil",
-        category: "Body Oil",
-        size: "300ml",
-        price: UNIFORM_PRICE,
-        description:
-          "A carrot-inspired body oil for customers who love rich, glowing body care products.",
       },
     ],
   },
@@ -123,6 +115,7 @@ export const CATEGORIES: Category[] = [
         description:
           "A glow-focused serum created for customers who want to support a radiant, polished, and beautiful skin appearance.",
         popular: true,
+        image: "/intensive glow serum-Photoroom.png",
       },
     ],
   },
@@ -140,6 +133,7 @@ export const CATEGORIES: Category[] = [
         description:
           "A turmeric-inspired soap for customers who enjoy natural-looking body care routines.",
         popular: true,
+        image: "/soap- tumeric-Photoroom.png",
       },
       {
         id: "glutathione-kojic-soap",
@@ -148,6 +142,7 @@ export const CATEGORIES: Category[] = [
         price: UNIFORM_PRICE,
         description:
           "A soap option inspired by Glutathione and Kojic beauty care routines.",
+        image: "/soap-intesive glow-Photoroom.png",
       },
     ],
   },
@@ -164,6 +159,7 @@ export const CATEGORIES: Category[] = [
         price: UNIFORM_PRICE,
         description:
           "A refreshing shower gel for customers who want a clean and glowing body care routine.",
+        image: "/showergel 3- Glow and Brightening.png",
       },
       {
         id: "pretty-polishing-body-wash",
@@ -172,6 +168,7 @@ export const CATEGORIES: Category[] = [
         price: UNIFORM_PRICE,
         description:
           "A polishing body wash designed to leave the skin feeling fresh, clean, and smooth.",
+        image: "/showergel 1- pretty and polishing.png",
       },
       {
         id: "vitamin-c-shower-gel",
@@ -181,6 +178,7 @@ export const CATEGORIES: Category[] = [
         description:
           "A Vitamin C-inspired shower gel for customers who prefer brightening body care products.",
         popular: true,
+        image: "/Showergel 2- vitamin c.png",
       },
     ],
   },
@@ -199,7 +197,7 @@ export const WHY_CHOOSE = [
   {
     title: "Wide Product Variety",
     description:
-      "Choose from Vitamin C, Retinol, Almond, Carrot, 24K Gold, Turmeric, Kojic, and other popular beauty care options.",
+      "Choose from Vitamin C, Retinol, Almond, 24K Gold, Turmeric, Kojic, and other popular beauty care options.",
   },
   {
     title: "Easy Ordering",
@@ -315,14 +313,14 @@ Missfiah Vitamin C Organic Oil and Vitamin C Whitening Shower Gel are great opti
     id: "choose-right-oil",
     title: "How to Choose the Right Missfiah Oil for Your Skin Routine",
     excerpt:
-      "A guide comparing Vitamin C, Almond, Carrot, Retinol, and 24K Gold options.",
+      "A guide comparing Vitamin C, Almond, Retinol, and 24K Gold options.",
     category: "Guide",
     readTime: "3 min read",
     content: `Missfiah Organic Oils come in different variants, so you can choose one that fits your routine.
 
 Vitamin C Organic Oil is a good choice if you want a fresh, bright look. 24K Gold Organic Oil offers a more luxurious feel. Retinol Organic Oil is popular with people who want an advanced-looking skincare routine.
 
-Almond Organic Oil is gentle and helps the skin feel soft and nourished. Carrot Organic Oil is rich and gives the skin a warm, glowing appearance.
+Almond Organic Oil is gentle and helps the skin feel soft and nourished.
 
 Think about what your skin needs and what you enjoy using. You can also switch between oils depending on the season or time of day.
 
@@ -426,3 +424,733 @@ export const NAV_LINKS = [
 export function formatPrice(price: number): string {
   return `Tsh ${new Intl.NumberFormat("en-TZ").format(price)}`;
 }
+
+export type MissfiahProductPopup = {
+  id: string;
+  slug: string;
+  name: string;
+  category: "Face Serum" | "Face Soap" | "Shower Gel";
+  priceTzs: number;
+  size: string | null;
+  popular: boolean;
+  shortDescription: string;
+  benefits: string[];
+  keyIngredients: string[];
+  directions: string[];
+  cautions: string[];
+  fullIngredients: string;
+};
+
+export const missfiahProductPopups: MissfiahProductPopup[] = [
+  {
+    id: "intensive-glow-serum",
+    slug: "intensive-glow-serum",
+    name: "Intensive Glow Serum",
+    category: "Face Serum",
+    priceTzs: 50000,
+    size: "40 ml / 1.35 fl oz",
+    popular: true,
+
+    shortDescription:
+      "A concentrated facial serum formulated with niacinamide, salicylic acid and azelaic acid to support clearer, smoother and more even-looking skin. Its lightweight formula helps improve the appearance of blemishes, dark spots and uneven pigmentation while adding hydration to the skin.",
+
+    benefits: [
+      "Helps improve the appearance of blemishes",
+      "Helps reduce the visible appearance of dark spots",
+      "Supports a brighter and more even-looking complexion",
+      "Helps refine the appearance of uneven skin texture",
+      "Provides lightweight hydration",
+      "Suitable for all skin types",
+    ],
+
+    keyIngredients: [
+      "Niacinamide",
+      "Salicylic Acid (BHA)",
+      "Azelaic Acid",
+      "Glycerin",
+      "Betaine",
+      "Trehalose",
+      "Hydrolyzed Collagen",
+      "Willow Bark Extract",
+      "Green botanical extracts",
+    ],
+
+    directions: [
+      "Cleanse and dry the face and neck before application.",
+      "Apply 3 to 4 drops of serum to the face and neck.",
+      "Gently massage or press the serum into the skin until absorbed.",
+      "Use in the morning and evening before applying moisturizer.",
+      "When used during the day, follow with a suitable sunscreen.",
+    ],
+
+    cautions: [
+      "For external use only.",
+      "Avoid direct contact with the eyes.",
+      "Patch test before first use.",
+      "Discontinue use if irritation occurs.",
+      "Keep out of reach of children.",
+      "Store in a cool, dry and ventilated place.",
+    ],
+
+    fullIngredients:
+      "Water, Niacinamide, Butylene Glycol, Glycerin, Trehalose, Glycereth-26, Betaine, 1,2-Hexanediol, Diethoxyethyl Succinate, Euglena Gracilis Polysaccharide, PEG/PPG/Polybutylene Glycol-8/5/3 Glycerin, Acrylates/C10-30 Alkyl Acrylate Crosspolymer, PEG-40 Hydrogenated Castor Oil, Hydroxyethylcellulose, Caprylhydroxamic Acid, Ethylhexylglycerin, Disodium EDTA, Hydrolyzed Collagen, Sodium Hydroxide, Fragrance, Sodium Polyacrylate, Anemarrhena Asphodeloides Root Extract, Pueraria Lobata Extract, Phellodendron Amurense Bark Extract, Salix Alba (Willow) Bark Extract, Cynanchum Atratum Extract, Sophora Japonica Bud Extract, Sophora Angustifolia Root Extract, Gynostemma Pentaphyllum Extract, Aspalathus Linearis Extract, Salvia Miltiorrhiza Extract, Sophora Flavescens Extract, Hydroxyacetophenone, Scutellaria Baicalensis Extract, Azelaic Acid and Salicylic Acid.",
+  },
+
+  {
+    id: "turmeric-organic-glow-soap",
+    slug: "turmeric-organic-glow-soap",
+    name: "Turmeric Organic & Glow Soap",
+    category: "Face Soap",
+    priceTzs: 50000,
+    size: "200 g",
+    popular: true,
+
+    shortDescription:
+      "A traditional handmade cleansing soap formulated with turmeric, licorice, kelp extract and sweet almond shell powder. It cleanses and gently exfoliates the skin, helping it feel smoother, refreshed and more radiant.",
+
+    benefits: [
+      "Provides deep cleansing",
+      "Helps remove dirt, excess oil and impurities",
+      "Gently exfoliates the skin",
+      "Helps improve the appearance of dull skin",
+      "Supports a brighter and more even-looking complexion",
+      "Helps improve the visible appearance of dark spots",
+      "Leaves the skin feeling smooth and refreshed",
+    ],
+
+    keyIngredients: [
+      "Turmeric Root Extract",
+      "Licorice Root Extract",
+      "Kelp Extract",
+      "Glycerin",
+      "Sweet Almond Shell Powder",
+      "Vitamin C",
+      "Soybean Oil",
+    ],
+
+    directions: [
+      "Wet the face or body with clean water.",
+      "Work the soap into a rich lather between the hands.",
+      "Gently massage the lather over the skin.",
+      "Avoid harsh scrubbing, especially on the face.",
+      "Rinse completely with clean water.",
+      "Follow with moisturizer.",
+    ],
+
+    cautions: [
+      "For external use only.",
+      "Avoid contact with the eyes.",
+      "Do not apply to broken or irritated skin.",
+      "Discontinue use if irritation occurs.",
+      "Keep out of reach of children.",
+      "Patch test before first use.",
+    ],
+
+    fullIngredients:
+      "Sodium Cocoate and/or Sodium Palm Kernelate, Water (Aqua), Glycerin, Macrocystis Pyrifera (Kelp) Extract, Glycyrrhiza Glabra (Licorice) Root Extract, Glycine Soja (Soybean) Oil, Curcuma Longa (Turmeric) Root Extract, Sodium Chloride, Tetrasodium Etidronate, Pentasodium Pentetate, Titanium Dioxide (CI 77891), Ascorbic Acid, Prunus Amygdalus Dulcis (Sweet Almond) Shell Powder, Fragrance (Parfum), Citronellol, Limonene, Hexyl Cinnamal, Hydroxycitronellal, Butylphenyl Methylpropional, Linalool and CI 19140.",
+  },
+
+  {
+    id: "glutathione-kojic-organic-glow-soap",
+    slug: "glutathione-kojic-organic-glow-soap",
+    name: "Glutathione & Kojic Organic & Glow Soap",
+    category: "Face Soap",
+    priceTzs: 50000,
+    size: "200 g",
+    popular: false,
+
+    shortDescription:
+      "A handmade facial cleansing soap formulated with glutathione and kojic-inspired ingredients. It cleanses and exfoliates while helping the skin feel smoother, moisturized and refreshed, with a brighter and more even-looking appearance.",
+
+    benefits: [
+      "Provides deep facial cleansing",
+      "Helps remove impurities and excess oil",
+      "Gently exfoliates rough surface skin",
+      "Helps improve the appearance of dullness",
+      "Supports a brighter-looking complexion",
+      "Helps improve the visible appearance of dark spots",
+      "Leaves the skin feeling soft and smooth",
+    ],
+
+    keyIngredients: [
+      "Glutathione",
+      "Kojic ingredients",
+      "Kelp Extract",
+      "Glycerin",
+      "Vitamin C",
+      "Sweet Almond Shell Powder",
+      "Soybean Oil",
+    ],
+
+    directions: [
+      "Wet the face or body with clean water.",
+      "Work the soap into a rich lather.",
+      "Gently massage the lather over the skin.",
+      "Avoid applying excessive pressure while exfoliating.",
+      "Rinse completely with clean water.",
+      "Follow with moisturizer.",
+    ],
+
+    cautions: [
+      "For external use only.",
+      "Avoid contact with the eyes.",
+      "Do not apply to broken or irritated skin.",
+      "Discontinue use if irritation occurs.",
+      "Keep out of reach of children.",
+      "Patch test before first use.",
+    ],
+
+    fullIngredients:
+      "Sodium Cocoate and/or Sodium Palm Kernelate, Water (Aqua), Glycerin, Macrocystis Pyrifera (Kelp) Extract, Glutathione, Kojic-related Extract, Glycine Soja (Soybean) Oil, Sodium Chloride, Tetrasodium Etidronate, Pentasodium Pentetate, Titanium Dioxide (CI 77891), Ascorbic Acid, Prunus Amygdalus Dulcis (Sweet Almond) Shell Powder, Fragrance (Parfum), Citronellol, Limonene, Hexyl Cinnamal, Hydroxycitronellal, Butylphenyl Methylpropional, Linalool and CI 19140.",
+  },
+
+  {
+    id: "glow-brightening-shower-gel",
+    slug: "glow-brightening-shower-gel",
+    name: "Glow & Brightening Shower Gel",
+    category: "Shower Gel",
+    priceTzs: 50000,
+    size: "1000 ml / 33.8 fl oz",
+    popular: false,
+
+    shortDescription:
+      "A refreshing foaming shower gel scrub formulated with vitamin C, vitamin E, collagen, sodium hyaluronate and jojoba esters. It cleanses and gently polishes the body, leaving the skin feeling fresh, smooth and radiant.",
+
+    benefits: [
+      "Cleanses away dirt, sweat and daily impurities",
+      "Produces a rich and refreshing foam",
+      "Gently exfoliates the skin",
+      "Helps improve the appearance of dull skin",
+      "Leaves the body feeling smoother and refreshed",
+      "Supports a radiant and more even-looking complexion",
+      "Provides a long-lasting fresh fragrance",
+    ],
+
+    keyIngredients: [
+      "Vitamin C",
+      "Vitamin E",
+      "Collagen",
+      "Sodium Hyaluronate",
+      "Jojoba Esters",
+      "Glycerin",
+    ],
+
+    directions: [
+      "Apply a suitable amount to a wet sponge, washcloth or loofah.",
+      "Massage until a rich foam develops.",
+      "Gently massage the foam over the body.",
+      "Pay extra attention to rough areas such as elbows and knees.",
+      "Rinse completely with clean or warm water.",
+      "Follow with Missfiah body cream or moisturizer.",
+    ],
+
+    cautions: [
+      "For external use only.",
+      "Avoid direct contact with the eyes.",
+      "Do not apply to broken or irritated skin.",
+      "Discontinue use if irritation occurs.",
+      "Keep out of reach of children.",
+    ],
+
+    fullIngredients:
+      "Water, Sodium Laureth Sulfate, Sodium Lauryl Sulfate, Acrylates Copolymer, Palm Kernelamide DEA, Sodium Chloride, Fragrance, Potassium Hydroxide, Cocamidopropyl Betaine, PEG-40 Hydrogenated Castor Oil, Lactose, Laureth-7, Microcrystalline Cellulose, Glycerin, Ammonium Laureth Sulfate, Disodium EDTA, Sodium Benzoate, Propylene Glycol, Benzyl Alcohol, Hydroxypropyl Methylcellulose, Methylisothiazolinone, Zea Mays (Corn) Starch, CI 77491, Mannitol, Jojoba Esters, Ascorbic Acid, CI 16255, CI 12490, Sodium Hyaluronate, Tocopherol, Phenoxyethanol, Caprylyl Glycol, 1,2-Hexanediol, Benzoic Acid and Collagen.",
+  },
+
+  {
+    id: "pretty-polishing-body-wash",
+    slug: "pretty-polishing-body-wash",
+    name: "Pretty Polishing Body Wash",
+    category: "Shower Gel",
+    priceTzs: 50000,
+    size: null,
+    popular: false,
+
+    shortDescription:
+      "A rich foaming body wash formulated with vitamin C, niacinamide, collagen, sodium hyaluronate and jojoba esters. It cleanses and gently polishes the body, helping the skin feel fresh, soft and smooth after every shower.",
+
+    benefits: [
+      "Deeply cleanses the body",
+      "Helps remove sweat, dirt and daily impurities",
+      "Gently exfoliates rough-feeling skin",
+      "Leaves the skin feeling soft and polished",
+      "Supports a fresh and radiant appearance",
+      "Helps maintain a more even-looking complexion",
+      "Provides a pleasant, long-lasting fragrance",
+    ],
+
+    keyIngredients: [
+      "Vitamin C",
+      "Niacinamide",
+      "Collagen",
+      "Sodium Hyaluronate",
+      "Jojoba Esters",
+      "Glycerin",
+    ],
+
+    directions: [
+      "Apply a suitable amount to a wet sponge, washcloth or loofah.",
+      "Massage until a thick foam develops.",
+      "Gently massage the foam over the entire body.",
+      "Avoid harsh scrubbing.",
+      "Rinse completely with clean or warm water.",
+      "Follow with body cream or moisturizer.",
+    ],
+
+    cautions: [
+      "For external use only.",
+      "Avoid direct contact with the eyes.",
+      "Do not apply to broken or irritated skin.",
+      "Discontinue use if irritation occurs.",
+      "Keep out of reach of children.",
+    ],
+
+    fullIngredients:
+      "Water, Sodium Laureth Sulfate, Sodium Lauryl Sulfate, Acrylates Copolymer, Palm Kernelamide DEA, Sodium Chloride, Fragrance, Glycol Distearate, Potassium Hydroxide, Cocamidopropyl Betaine, Lactose, Laureth-7, Microcrystalline Cellulose, Glycerin, Glycol Stearate, Ammonium Laureth Sulfate, Styrene/Acrylates Copolymer, Disodium EDTA, Sodium Benzoate, Propylene Glycol, Benzyl Alcohol, Coco-Glucoside, Methylisothiazolinone, Zea Mays (Corn) Starch, Hydroxypropyl Methylcellulose, CI 77891, Mannitol, Ascorbic Acid, Jojoba Esters, Citric Acid, Benzoic Acid, Sodium Hyaluronate, Niacinamide, 1,2-Hexanediol and Collagen.",
+  },
+
+  {
+    id: "vitamin-c-whitening-shower-gel",
+    slug: "vitamin-c-shower-gel",
+    name: "Vitamin C Shower Gel Scrub",
+    category: "Shower Gel",
+    priceTzs: 50000,
+    size: null,
+    popular: true,
+
+    shortDescription:
+      "A Vitamin C-focused exfoliating shower gel formulated with ascorbic acid, collagen, sodium hyaluronate, jojoba esters, soybean extract and soapnut fruit extract. It produces a rich foam that cleanses and refreshes while leaving the body feeling smooth and radiant.",
+
+    benefits: [
+      "Cleanses away dirt, sweat and impurities",
+      "Gently exfoliates dull and rough-feeling skin",
+      "Leaves the body feeling fresh and smooth",
+      "Supports a brighter and more radiant appearance",
+      "Helps maintain a more even-looking complexion",
+      "Provides a refreshing shower experience",
+      "Produces a rich, luxurious foam",
+    ],
+
+    keyIngredients: [
+      "Vitamin C",
+      "Collagen",
+      "Sodium Hyaluronate",
+      "Jojoba Esters",
+      "Soybean Seed Extract",
+      "Soapnut Fruit Extract",
+      "Glycerin",
+    ],
+
+    directions: [
+      "Apply a suitable amount to a wet sponge, washcloth or loofah.",
+      "Massage until a rich foam develops.",
+      "Gently massage the foam over the entire body.",
+      "Focus gently on rough areas such as the elbows and knees.",
+      "Rinse completely with clean or warm water.",
+      "Follow with body cream or moisturizer.",
+    ],
+
+    cautions: [
+      "For external use only.",
+      "Avoid direct contact with the eyes.",
+      "Do not apply to broken or irritated skin.",
+      "Discontinue use if irritation occurs.",
+      "Keep out of reach of children.",
+    ],
+
+    fullIngredients:
+      "Water, Sodium Laureth Sulfate, Sodium Lauryl Sulfate, Acrylates Copolymer, Sodium Chloride, Palm Kernelamide DEA, Fragrance, Potassium Hydroxide, Cocamidopropyl Betaine, Lactose, Microcrystalline Cellulose, Laureth-7, Glycerin, Ammonium Laureth Sulfate, Disodium EDTA, Sodium Benzoate, Propylene Glycol, Benzyl Alcohol, CI 77492, Methylisothiazolinone, Zea Mays (Corn) Starch, Hydroxypropyl Methylcellulose, Mannitol, CI 19140, Ascorbic Acid, Jojoba Esters, CI 16255, Sodium Hyaluronate, Maltoligosyl Glucoside, Xylitylglucoside, Hydrogenated Starch Hydrolysate, Anhydroxylitol, Glycine Soja (Soybean) Seed Extract, Sapindus Mukorossi Fruit Extract, Xylitol, 1,2-Hexanediol and Soluble Collagen.",
+  },
+];
+
+export type ProductPopupData = {
+  id: string;
+  name: string;
+  category: string;
+  priceTzs: number | null;
+  size: string | null;
+  popular: boolean;
+  status?: "ready" | "awaiting-product-information";
+  tagline?: string | null;
+  shortDescription: string | null;
+  suitableFor?: string[];
+  benefits: string[];
+  keyIngredients: string[];
+  directions: string[];
+  cautions: string[];
+  storage?: string | null;
+  fullIngredients: string | null;
+};
+
+function popupToData(
+  popup: MissfiahProductPopup | MissfiahOrganicOil
+): ProductPopupData {
+  return {
+    id: popup.id,
+    name: popup.name,
+    category: popup.category,
+    priceTzs: popup.priceTzs,
+    size: popup.size,
+    popular: popup.popular,
+    status: "status" in popup ? popup.status : "ready",
+    tagline: "tagline" in popup ? popup.tagline : undefined,
+    shortDescription: popup.shortDescription,
+    suitableFor: "suitableFor" in popup ? popup.suitableFor : undefined,
+    benefits: popup.benefits,
+    keyIngredients: popup.keyIngredients,
+    directions: popup.directions,
+    cautions: popup.cautions,
+    storage: "storage" in popup ? popup.storage : undefined,
+    fullIngredients: popup.fullIngredients,
+  };
+}
+
+export function getProductPopup(
+  productId: string
+): ProductPopupData | undefined {
+  // Non-oil products
+  const nonOilDirect = missfiahProductPopups.find((p) => p.slug === productId);
+  if (nonOilDirect) return popupToData(nonOilDirect);
+
+  const nonOilFallbackMap: Record<string, string> = {
+    "turmeric-soap": "turmeric-organic-glow-soap",
+    "glutathione-kojic-soap": "glutathione-kojic-organic-glow-soap",
+  };
+  const nonOilSlug = nonOilFallbackMap[productId];
+  if (nonOilSlug) {
+    const popup = missfiahProductPopups.find((p) => p.slug === nonOilSlug);
+    if (popup) return popupToData(popup);
+  }
+
+  // Organic oil products
+  const oilMap: Record<string, string> = {
+    "vitamin-c-oil": "vitamin-c-organic-oil",
+    "24k-gold-oil": "24k-gold-organic-oil",
+    "retinol-oil": "retinol-organic-oil",
+    "almond-oil": "almond-organic-oil",
+  };
+  const oilId = oilMap[productId];
+  if (oilId) {
+    const oil = missfiahOrganicOils.find((p) => p.id === oilId);
+    if (oil) return popupToData(oil);
+  }
+
+  return undefined;
+}
+
+export type MissfiahOrganicOil = {
+  id: string;
+  slug: string;
+  name: string;
+  category: "Organic Oil";
+  image: string;
+  priceTzs: number | null;
+  size: string | null;
+  popular: boolean;
+  status: "ready" | "awaiting-product-information";
+  tagline: string | null;
+  shortDescription: string | null;
+  suitableFor: string[];
+  benefits: string[];
+  keyIngredients: string[];
+  directions: string[];
+  cautions: string[];
+  storage: string | null;
+  fullIngredients: string | null;
+  claimsToVerifyBeforePublishing: string[];
+};
+
+export const missfiahOrganicOils: MissfiahOrganicOil[] = [
+  {
+    id: "vitamin-c-organic-oil",
+    slug: "vitamin-c-organic-oil",
+    name: "Vitamin C Organic Oil",
+    category: "Organic Oil",
+    image: "/Missfiah Organic Oil.png",
+    priceTzs: null,
+    size: "300 ml / 11 fl oz",
+    popular: true,
+    status: "ready",
+
+    tagline: "Brightening and Glowing Face & Body Oil",
+
+    shortDescription:
+      "A moisturizing face and body oil formulated with Vitamin C oil, lemon oil, orange oil and Vitamin E. It helps nourish dry-looking skin while supporting a brighter, smoother and more radiant appearance.",
+
+    suitableFor: [
+      "Face and body",
+      "Dull-looking skin",
+      "Dry or dehydrated-looking skin",
+      "Uneven-looking skin tone",
+      "Skin with visible dark spots",
+    ],
+
+    benefits: [
+      "Helps moisturize and soften the skin",
+      "Supports a brighter and more radiant appearance",
+      "Helps improve the appearance of uneven skin tone",
+      "Helps reduce the visible appearance of dark spots",
+      "Helps improve the appearance of fine lines",
+      "Provides antioxidant skin-conditioning benefits",
+      "Suitable for use on the face and body",
+    ],
+
+    keyIngredients: ["Vitamin C Oil", "Lemon Oil", "Orange Oil", "Vitamin E"],
+
+    directions: [
+      "Cleanse and dry the skin before application.",
+      "Place a suitable amount of oil in the palm of your hand.",
+      "Apply to the face, neck, back, hands, feet or other desired body areas.",
+      "Gently massage the oil into the skin until absorbed.",
+      "Use a suitable sunscreen during the daytime.",
+    ],
+
+    cautions: [
+      "For external use only.",
+      "Do not swallow.",
+      "Avoid direct contact with the eyes.",
+      "Do not apply to broken, damaged or irritated skin.",
+      "Patch test before first use.",
+      "Discontinue use if irritation occurs.",
+      "Keep out of reach of children.",
+    ],
+
+    storage:
+      "Store tightly closed in a cool, dry place away from direct sunlight and excessive heat.",
+
+    fullIngredients: "Vitamin C Oil, Lemon Oil, Orange Oil and Vitamin E.",
+
+    claimsToVerifyBeforePublishing: [
+      "The label displays an SPF 45 claim. Do not advertise SPF protection unless the product has appropriate laboratory testing and regulatory approval.",
+      "The label displays a 100% pure organic claim. Confirm that documentation is available to support this statement.",
+      "Do not publish label statements suggesting that the oil treats anxiety, stress or insomnia. These are medical claims and are not appropriate for standard cosmetic product copy.",
+    ],
+  },
+
+  {
+    id: "24k-gold-organic-oil",
+    slug: "24k-gold-organic-oil",
+    name: "24K Gold Organic Oil",
+    category: "Organic Oil",
+    image: "/missfiah 24k gold.png",
+    priceTzs: null,
+    size: "300 ml / 11 fl oz",
+    popular: true,
+    status: "ready",
+
+    tagline: "Radiance & Moisture Face and Body Oil",
+
+    shortDescription:
+      "A luxurious face and body oil formulated with argan oil, Vitamin E, glycerin, hyaluronic acid, arbutin and visible gold-coloured foil particles. It helps replenish moisture while leaving the skin looking softer, smoother and more radiant.",
+
+    suitableFor: [
+      "Face and body",
+      "Dry or dehydrated-looking skin",
+      "Dull-looking skin",
+      "Uneven-looking skin tone",
+      "Skin showing visible signs of ageing",
+    ],
+
+    benefits: [
+      "Helps replenish and retain skin moisture",
+      "Leaves the skin feeling soft and conditioned",
+      "Supports a brighter and more radiant appearance",
+      "Helps improve the appearance of dull-looking skin",
+      "Helps improve the appearance of fine lines",
+      "Supports smoother and more youthful-looking skin",
+      "Suitable for face and body massage",
+    ],
+
+    keyIngredients: [
+      "Argan Oil",
+      "Gold-Coloured Foil Particles",
+      "Glycerin",
+      "Vitamin E",
+      "Arbutin",
+      "Hyaluronic Acid",
+    ],
+
+    directions: [
+      "Cleanse and dry the skin before application.",
+      "Place a suitable amount of oil in the palm of your hand.",
+      "Apply to the face, neck, back, hands, feet or desired body areas.",
+      "Gently massage until the oil is evenly distributed and absorbed.",
+      "Use a suitable sunscreen during the daytime.",
+    ],
+
+    cautions: [
+      "For external use only.",
+      "Do not swallow.",
+      "Avoid direct contact with the eyes.",
+      "Do not apply to broken, damaged or irritated skin.",
+      "Patch test before first use.",
+      "Discontinue use if irritation occurs.",
+      "Keep out of reach of children.",
+    ],
+
+    storage:
+      "Store tightly closed in a cool, dry place away from direct sunlight and excessive heat.",
+
+    fullIngredients:
+      "Argan Oil, Gold Foil, Glycerin, Vitamin E, Arbutin and Hyaluronic Acid.",
+
+    claimsToVerifyBeforePublishing: [
+      "Avoid stating that the product removes wrinkles. Use the safer wording: helps reduce the visible appearance of fine lines and wrinkles.",
+      "Avoid stating that ingredients penetrate deep into the skin unless supported by appropriate product testing.",
+      "Avoid stating that the product eliminates free radicals. Use antioxidant skin-conditioning language instead.",
+      "Confirm the composition and cosmetic suitability of the decorative gold-coloured particles.",
+    ],
+  },
+
+  {
+    id: "retinol-organic-oil",
+    slug: "retinol-organic-oil",
+    name: "Retinol Organic Oil",
+    category: "Organic Oil",
+    image: "/missfiah retinol.png",
+    priceTzs: null,
+    size: "300 ml / 11 fl oz",
+    popular: true,
+    status: "ready",
+
+    tagline: "Smoothing and Renewing Face & Body Oil",
+
+    shortDescription:
+      "A nourishing face and body oil formulated with retinol, sweet almond oil, rose oil, Vitamin C and Vitamin E. It is designed to support smoother-looking skin while improving the appearance of fine lines, dark spots, uneven tone and rough texture.",
+
+    suitableFor: [
+      "Face and body",
+      "Mature-looking skin",
+      "Uneven-looking skin texture",
+      "Skin with visible fine lines",
+      "Skin with visible dark spots",
+      "Dull-looking skin",
+    ],
+
+    benefits: [
+      "Helps reduce the visible appearance of fine lines",
+      "Supports smoother and more refined-looking skin",
+      "Helps improve the appearance of uneven skin texture",
+      "Helps improve the visible appearance of dark spots",
+      "Supports the appearance of improved skin elasticity",
+      "Helps moisturize and soften dry-looking skin",
+      "Supports a brighter and more even-looking complexion",
+    ],
+
+    keyIngredients: [
+      "Retinol",
+      "Sweet Almond Oil",
+      "Rose Oil",
+      "Vitamin C",
+      "Vitamin E",
+    ],
+
+    directions: [
+      "Cleanse and completely dry the skin before application.",
+      "Place a small amount of oil in the palm of your hand.",
+      "Apply a thin layer to the face, neck or desired body areas.",
+      "Gently massage until absorbed.",
+      "New retinol users should introduce the product gradually.",
+      "Evening use is recommended.",
+      "Apply a suitable broad-spectrum sunscreen during the daytime.",
+    ],
+
+    cautions: [
+      "For external use only.",
+      "Do not swallow.",
+      "Avoid direct contact with the eyes and lips.",
+      "Do not apply to broken, damaged or irritated skin.",
+      "Patch test before first use.",
+      "Avoid combining with multiple strong exfoliating products in the same routine.",
+      "Discontinue use if persistent redness, burning or irritation occurs.",
+      "Keep out of reach of children.",
+    ],
+
+    storage:
+      "Store tightly closed in a cool, dry place away from direct sunlight and excessive heat.",
+
+    fullIngredients:
+      "Vitamin E Oil, Sweet Almond Oil, Retinol (Vitamin A), Rose Oil and Vitamin C.",
+
+    claimsToVerifyBeforePublishing: [
+      "Avoid describing the product as an anti-wrinkle treatment. Use appearance-based cosmetic wording.",
+      "Avoid promising collagen production or cell renewal unless supported by appropriate testing.",
+      "Avoid promising that the product will peel away dead skin.",
+      "Confirm the concentration and form of retinol before providing detailed usage-frequency instructions.",
+    ],
+  },
+
+  {
+    id: "almond-organic-oil",
+    slug: "almond-organic-oil",
+    name: "Almond Organic Oil",
+    category: "Organic Oil",
+    image: "/Missfiah-almond.png",
+    priceTzs: null,
+    size: "300 ml / 11 fl oz",
+    popular: false,
+    status: "ready",
+
+    tagline: "Nourishing and Moisturizing Face & Body Oil",
+
+    shortDescription:
+      "A nourishing face and body oil designed to moisturize, soften and condition dry-looking skin. Its smooth, lightweight texture helps support a healthier-looking glow while leaving the skin feeling soft, supple and comfortable.",
+
+    suitableFor: [
+      "Face and body",
+      "Dry or dehydrated-looking skin",
+      "Dull-looking skin",
+      "Rough-feeling skin",
+      "Daily moisturizing and massage",
+    ],
+
+    benefits: [
+      "Helps moisturize and soften dry-looking skin",
+      "Supports a smooth and supple skin texture",
+      "Helps reduce the feeling of dryness and tightness",
+      "Leaves the skin looking nourished and radiant",
+      "Helps condition rough-feeling areas",
+      "Suitable for face and body massage",
+      "Supports a healthy-looking natural glow",
+    ],
+
+    keyIngredients: [
+      "Sweet Almond Oil",
+      "Skin-conditioning oils",
+      "Moisturizing botanical oils",
+    ],
+
+    directions: [
+      "Cleanse and dry the skin before application.",
+      "Place a suitable amount of oil in the palm of your hand.",
+      "Apply to the face, neck, hands, feet or desired body areas.",
+      "Gently massage into the skin using circular movements until absorbed.",
+      "Apply extra oil to particularly dry areas such as the elbows, knees and heels.",
+      "Use daily or whenever the skin requires additional moisture.",
+    ],
+
+    cautions: [
+      "For external use only.",
+      "Do not swallow.",
+      "Avoid direct contact with the eyes.",
+      "Do not apply to broken, damaged or irritated skin.",
+      "Patch test before first use.",
+      "Do not use if you have a known allergy to almonds or tree nuts.",
+      "Discontinue use if irritation occurs.",
+      "Keep out of reach of children.",
+    ],
+
+    storage:
+      "Store tightly closed in a cool, dry place away from direct sunlight and excessive heat.",
+
+    fullIngredients:
+      "The complete ingredient list should be copied from the physical Almond Organic Oil packaging before publication.",
+
+    claimsToVerifyBeforePublishing: [
+      "Confirm the exact product size from the physical packaging.",
+      "Confirm whether the product contains pure sweet almond oil or a blend of oils.",
+      "Confirm whether Vitamin E, fragrance or other botanical ingredients are included.",
+      "Do not advertise the product as 100% organic unless supporting documentation is available.",
+      "Do not claim that the product treats eczema, scars, stretch marks or other medical conditions.",
+    ],
+  },
+];

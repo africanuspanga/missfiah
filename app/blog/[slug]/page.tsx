@@ -21,13 +21,30 @@ export async function generateMetadata({
   return {
     title: `${post.title} | Missfiah Beauty Blog`,
     description: post.excerpt,
-    keywords: [post.category, "Missfiah", "organic products", "skincare", "Tanzania"],
+    keywords: [
+      post.category,
+      "Missfiah",
+      "organic products",
+      "skincare",
+      "Tanzania",
+      "body care",
+      "beauty tips",
+    ],
+    alternates: {
+      canonical: `/blog/${post.id}`,
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt,
       type: "article",
       locale: "en_TZ",
       siteName: BUSINESS.name,
+      url: `/blog/${post.id}`,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
     },
   };
 }

@@ -8,16 +8,32 @@ import { CTASection } from "@/components/cta-section";
 export const metadata: Metadata = {
   title: "Missfiah Beauty Blog | Skincare Tips & Product Guides",
   description:
-    "Read simple skincare tips, product guides, and beauty care advice from Missfiah Organic Products. Learn how to build a better body care routine.",
+    "Read simple skincare tips, product guides, and beauty care advice from Missfiah Organic Products. Learn how to build a better body care routine in Tanzania.",
   keywords: [
     "Missfiah blog",
     "skincare tips Tanzania",
     "body care routine",
     "organic skincare guide",
     "beauty tips",
+    "Missfiah skincare advice",
+    "Dar es Salaam beauty blog",
+    "natural skincare tips",
   ],
   alternates: {
     canonical: "/blog",
+  },
+  openGraph: {
+    title: "Missfiah Beauty Blog | Skincare Tips & Product Guides",
+    description:
+      "Simple skincare tips, product guides, and beauty advice from Missfiah Organic Products.",
+    url: "/blog",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Missfiah Beauty Blog | Skincare Tips & Product Guides",
+    description:
+      "Simple skincare tips, product guides, and beauty advice from Missfiah Organic Products.",
   },
 };
 

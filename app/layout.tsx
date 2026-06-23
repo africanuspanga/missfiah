@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: "%s | Missfiah Organic Products",
   },
   description:
-    "Shop Missfiah Organic Products in Tanzania. Buy organic body oils, glow serums, organic soaps, and shower gels for your daily skincare routine. Based in Kariakoo, Dar es Salaam.",
+    "Shop Missfiah Organic Products in Tanzania. Buy organic body oils, glow serums, organic soaps, and shower gels. Visit us at 34 Mafia St, Kariakoo, Dar es Salaam or order via WhatsApp.",
   keywords: [
     "Missfiah Organic Products",
     "organic beauty products Tanzania",
@@ -38,7 +38,6 @@ export const metadata: Metadata = {
     "24K Gold oil",
     "Retinol oil",
     "Almond oil",
-    "Carrot oil",
     "Turmeric soap",
     "Kojic soap",
     "Glutathione soap",
@@ -48,7 +47,9 @@ export const metadata: Metadata = {
     "Dar es Salaam skincare",
     "Tanzania organic skincare",
     "Missfiah Kariakoo",
+    "34 Mafia St Kariakoo",
     "WhatsApp order skincare Tanzania",
+    "Missfiah location",
   ],
   authors: [{ name: "Missfiah Organic Products" }],
   creator: "Missfiah Organic Products",

@@ -8,27 +8,51 @@ import { CTASection } from "@/components/cta-section";
 export const metadata: Metadata = {
   title: "About Missfiah Organic Products | Beauty Brand in Dar es Salaam",
   description:
-    "Learn about Missfiah Organic Products, a Dar es Salaam beauty and skincare brand offering organic-inspired oils, soaps, serums, and shower gels in Kariakoo, Tanzania.",
+    "Learn about Missfiah Organic Products, a Dar es Salaam beauty and skincare brand offering organic-inspired oils, soaps, serums, and shower gels at 34 Mafia St, Kariakoo, Tanzania.",
   keywords: [
     "About Missfiah",
     "Missfiah Organic Products",
     "beauty brand Dar es Salaam",
     "skincare brand Kariakoo",
     "organic skincare Tanzania",
+    "Missfiah location",
+    "Kariakoo beauty products",
+    "34 Mafia St Kariakoo",
   ],
   alternates: {
     canonical: "/about",
   },
+  openGraph: {
+    title: "About Missfiah Organic Products | Beauty Brand in Dar es Salaam",
+    description:
+      "Discover Missfiah Organic Products, a trusted beauty brand based in Kariakoo, Dar es Salaam, Tanzania.",
+    url: "/about",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Missfiah Organic Products | Beauty Brand in Dar es Salaam",
+    description:
+      "Discover Missfiah Organic Products, a trusted beauty brand based in Kariakoo, Dar es Salaam, Tanzania.",
+  },
 };
 
-const OFFERINGS = [
-  "Body oils",
-  "Glow serums",
-  "Organic and glow soaps",
-  "Shower gels",
-  "Brightening and polishing body care products",
-  "Direct WhatsApp ordering",
-  "Customer support for product selection",
+const VALUES = [
+  {
+    title: "Quality First",
+    description:
+      "We focus on products that feel good, smell pleasant, and support a healthy-looking skin routine.",
+  },
+  {
+    title: "Accessible Beauty",
+    description:
+      "Our collection is made for everyday people who want reliable skincare without complicated routines.",
+  },
+  {
+    title: "Customer Care",
+    description:
+      "We are always happy to help customers choose the right product and answer questions through WhatsApp or Instagram.",
+  },
 ];
 
 export default function AboutPage() {
@@ -49,10 +73,10 @@ export default function AboutPage() {
               About {BUSINESS.name}
             </h1>
             <p className="text-lg leading-relaxed text-stone-600">
-              Missfiah Organic Products is a Tanzanian beauty and skincare brand
-              based in Kariakoo, Dar es Salaam. We provide a growing collection
-              of body oils, glow serums, soaps, and shower gels for customers who
-              want beautiful, nourished, and glowing-looking skin.
+              Missfiah Organic Products is a beauty and skincare brand based in
+              Kariakoo, Dar es Salaam. We offer body oils, glow serums, organic
+              soaps, and shower gels for people who want to take care of their
+              skin with quality products.
             </p>
           </AnimatedSection>
         </div>
@@ -64,15 +88,22 @@ export default function AboutPage() {
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
             <AnimatedSection direction="left">
               <h2 className="mb-6 font-serif text-3xl font-bold text-stone-900 sm:text-4xl">
-                Everyday Beauty Care
+                Beauty Care Made Simple
               </h2>
-              <p className="mb-6 text-lg leading-relaxed text-stone-600">
-                Our brand is built around simple, everyday beauty care. We believe
-                skincare should feel good, look good, and be easy to access. That
-                is why we offer a variety of products that customers can choose
-                from depending on their personal skincare routine.
-              </p>
-              <div className="flex items-center gap-3 rounded-2xl bg-brand/5 p-4">
+              <div className="space-y-4 text-lg leading-relaxed text-stone-600">
+                <p>
+                  We believe skincare should be easy to follow and enjoyable to
+                  use. That is why we bring together a collection of products that
+                  support a simple daily routine: cleansing, nourishing, and
+                  glowing.
+                </p>
+                <p>
+                  From Vitamin C and 24K Gold body oils to turmeric soaps and
+                  brightening shower gels, every product is selected to help
+                  customers feel clean, soft, and confident in their skin.
+                </p>
+              </div>
+              <div className="mt-8 flex items-center gap-3 rounded-2xl bg-brand/5 p-4">
                 <MapPin className="text-brand" size={24} />
                 <div>
                   <p className="font-semibold text-stone-900">Our Location</p>
@@ -112,8 +143,8 @@ export default function AboutPage() {
                   Our Mission
                 </h3>
                 <p className="leading-relaxed text-stone-600">
-                  To provide quality beauty and body care products that help
-                  customers feel confident, fresh, and radiant every day.
+                  To make quality beauty and body care products available to
+                  everyone who wants healthy, glowing, and beautiful-looking skin.
                 </p>
               </div>
             </StaggerItem>
@@ -126,9 +157,8 @@ export default function AboutPage() {
                   Our Vision
                 </h3>
                 <p className="leading-relaxed text-stone-600">
-                  To become a trusted beauty and skincare brand in Tanzania and
-                  beyond, known for organic-inspired products, elegant packaging,
-                  and customer-focused service.
+                  To become a trusted name in skincare across Tanzania by offering
+                  products that customers love and a service they can rely on.
                 </p>
               </div>
             </StaggerItem>
@@ -136,26 +166,31 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* What We Offer */}
+      {/* Our Values */}
       <section className="py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="mb-12 text-center">
             <span className="mb-3 inline-block text-sm font-semibold uppercase tracking-wider text-brand">
-              What We Offer
+              What We Stand For
             </span>
             <h2 className="font-serif text-3xl font-bold text-stone-900 sm:text-4xl">
-              Everything You Need for Your Routine
+              Our Values
             </h2>
           </AnimatedSection>
 
-          <StaggerContainer className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {OFFERINGS.map((item) => (
-              <StaggerItem key={item}>
-                <div className="flex items-center gap-4 rounded-2xl bg-white p-5 shadow-sm shadow-stone-200/50 ring-1 ring-stone-100 transition-all hover:-translate-y-1 hover:shadow-md">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand/10 text-brand">
-                    <Heart size={18} />
+          <StaggerContainer className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {VALUES.map((item) => (
+              <StaggerItem key={item.title}>
+                <div className="h-full rounded-3xl bg-white p-8 shadow-sm shadow-stone-200/50 ring-1 ring-stone-100 transition-all hover:-translate-y-1 hover:shadow-md">
+                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-brand/10 text-brand">
+                    <Heart size={22} />
                   </div>
-                  <span className="font-medium text-stone-900">{item}</span>
+                  <h3 className="mb-3 font-serif text-xl font-semibold text-stone-900">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-stone-600">
+                    {item.description}
+                  </p>
                 </div>
               </StaggerItem>
             ))}

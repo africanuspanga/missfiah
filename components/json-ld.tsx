@@ -33,10 +33,11 @@ export function JsonLd() {
     telephone: BUSINESS.whatsapp,
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Kariakoo",
+      streetAddress: "34 Mafia St, Kariakoo",
       addressLocality: "Dar es Salaam",
       addressCountry: "TZ",
     },
+    hasMap: "https://maps.app.goo.gl/XqAsGU566zhbSNHVA",
     priceRange: "$$",
   };
 

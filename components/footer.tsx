@@ -97,7 +97,14 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-sm text-stone-400">
                 <MapPin size={18} className="mt-0.5 shrink-0 text-brand" />
-                <span>{BUSINESS.location}</span>
+                <a
+                  href={BUSINESS.mapLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors hover:text-white"
+                >
+                  {BUSINESS.location}
+                </a>
               </li>
               <li>
                 <a
@@ -129,7 +136,17 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
           <p className="text-center text-xs text-stone-500 sm:text-left">
-            © {BUSINESS.year} {BUSINESS.name}. All rights reserved.
+            © {BUSINESS.year}{" "}
+            <a
+              href="https://www.driftmark.co.tz/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-stone-500 transition-colors hover:text-stone-300"
+              aria-label="Website designed and developed by Driftmark"
+            >
+              {BUSINESS.name}
+            </a>
+            . All rights reserved.
           </p>
           <p className="text-xs text-stone-500">
             Designed with nature in mind.

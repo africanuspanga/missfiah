@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import {
-  MapPin,
-  MessageCircle,
-  Clock,
-} from "lucide-react";
+import { MapPin, MessageCircle, Clock, ExternalLink } from "lucide-react";
 import { BUSINESS } from "@/lib/data";
-import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/animated-section";
+import {
+  AnimatedSection,
+  StaggerContainer,
+  StaggerItem,
+} from "@/components/animated-section";
 import { ContactForm } from "@/components/contact-form";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 import { InstagramIcon } from "@/components/icons";
@@ -14,16 +14,34 @@ import { CTASection } from "@/components/cta-section";
 export const metadata: Metadata = {
   title: "Contact Missfiah Organic Products | Kariakoo Dar es Salaam",
   description:
-    "Contact Missfiah Organic Products in Kariakoo, Dar es Salaam. Order skincare and beauty products through WhatsApp or connect with us on Instagram.",
+    "Visit Missfiah Organic Products at 34 Mafia St, Kariakoo, Dar es Salaam, Tanzania. Order skincare, body oils, soaps, serums and shower gels via WhatsApp.",
   keywords: [
     "Contact Missfiah",
     "Missfiah WhatsApp",
     "order skincare Dar es Salaam",
     "Kariakoo beauty shop",
     "Missfiah Instagram",
+    "Missfiah location",
+    "34 Mafia St Kariakoo",
+    "organic skincare Dar es Salaam",
+    "Missfiah address",
+    "beauty products Tanzania",
   ],
   alternates: {
     canonical: "/contact",
+  },
+  openGraph: {
+    title: "Contact Missfiah Organic Products | Kariakoo Dar es Salaam",
+    description:
+      "Visit us at 34 Mafia St, Kariakoo, Dar es Salaam. Order skincare and beauty products via WhatsApp or Instagram.",
+    url: "/contact",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Missfiah Organic Products | Kariakoo Dar es Salaam",
+    description:
+      "Visit us at 34 Mafia St, Kariakoo, Dar es Salaam. Order skincare and beauty products via WhatsApp.",
   },
 };
 
@@ -91,7 +109,15 @@ export default function ContactPage() {
                         </div>
                         <div>
                           <p className="font-semibold text-stone-900">Location</p>
-                          <p>{BUSINESS.location}</p>
+                          <a
+                            href={BUSINESS.mapLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 transition-colors hover:text-brand"
+                          >
+                            {BUSINESS.location}
+                            <ExternalLink size={12} />
+                          </a>
                         </div>
                       </li>
                       <li className="flex items-start gap-3 text-sm text-stone-600">
@@ -153,6 +179,59 @@ export default function ContactPage() {
               </StaggerContainer>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Map */}
+      <section className="bg-stone-50 py-20 lg:py-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <AnimatedSection className="mb-10 text-center">
+            <span className="mb-3 inline-block text-sm font-semibold uppercase tracking-wider text-brand">
+              Find Us
+            </span>
+            <h2 className="mb-4 font-serif text-3xl font-bold text-stone-900 sm:text-4xl">
+              Visit Our Shop
+            </h2>
+            <p className="mx-auto max-w-2xl text-lg text-stone-600">
+              We are located in the heart of Kariakoo, Dar es Salaam. Stop by to
+              explore our products or order online for delivery.
+            </p>
+          </AnimatedSection>
+
+          <AnimatedSection>
+            <div className="overflow-hidden rounded-3xl bg-white shadow-sm shadow-stone-200/50 ring-1 ring-stone-100">
+              <div className="relative aspect-[16/9] w-full sm:aspect-[21/9]">
+                <iframe
+                  src="https://www.google.com/maps?q=34+Mafia+St,+Kariakoo,+Dar+es+Salaam,+Tanzania&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Missfiah Organic Products location"
+                  className="absolute inset-0 h-full w-full"
+                />
+              </div>
+              <div className="flex flex-col items-center justify-between gap-4 p-6 sm:flex-row sm:p-8">
+                <div className="text-center sm:text-left">
+                  <h3 className="font-serif text-lg font-semibold text-stone-900">
+                    {BUSINESS.name}
+                  </h3>
+                  <p className="text-sm text-stone-600">{BUSINESS.location}</p>
+                </div>
+                <a
+                  href={BUSINESS.mapLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
+                >
+                  <MapPin size={16} />
+                  Open in Google Maps
+                </a>
+              </div>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 

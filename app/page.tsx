@@ -143,6 +143,58 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* About Us Section */}
+      <section className="bg-stone-100/50 py-24 lg:py-32">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+            <AnimatedSection direction="left">
+              <div className="relative">
+                <div className="absolute inset-0 rounded-[2.5rem] bg-gradient-to-br from-brand/20 to-gold/20 blur-xl" />
+                <div className="relative aspect-[4/3] overflow-hidden rounded-[2.5rem] bg-white p-2 shadow-xl shadow-stone-200/50 ring-1 ring-stone-100">
+                  <Image
+                    src="/About us section of homepage.jpeg"
+                    alt="About Missfiah Organic Products"
+                    fill
+                    className="rounded-[2rem] object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                </div>
+              </div>
+            </AnimatedSection>
+
+            <AnimatedSection direction="right">
+              <span className="mb-3 inline-block text-sm font-semibold uppercase tracking-wider text-brand">
+                About Us
+              </span>
+              <h2 className="mb-6 font-serif text-3xl font-bold text-stone-900 sm:text-4xl lg:text-5xl">
+                Natural Beauty for Everyday Confidence
+              </h2>
+              <div className="space-y-4 text-lg leading-relaxed text-stone-600">
+                <p>
+                  Missfiah Organic Products is a beauty and skincare brand based
+                  in Kariakoo, Dar es Salaam. We offer a thoughtful collection of
+                  body oils, glow serums, organic soaps, and shower gels made for
+                  people who want to look after their skin with quality products.
+                </p>
+                <p>
+                  Every product is chosen to support a simple, enjoyable skincare
+                  routine. Whether you are looking for a brightening oil, a gentle
+                  soap, or a refreshing shower gel, Missfiah is here to help you
+                  feel clean, soft, and confident in your skin.
+                </p>
+              </div>
+              <Link
+                href="/about"
+                className="mt-8 inline-flex items-center gap-2 rounded-full bg-stone-900 px-7 py-3.5 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-brand focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
+              >
+                Learn More About Us
+                <ArrowRight size={18} />
+              </Link>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
       {/* Categories Section */}
       <section className="bg-stone-100/50 py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

@@ -105,7 +105,6 @@ export function ContactForm() {
           <option value="24K Gold Organic Oil">24K Gold Organic Oil</option>
           <option value="Retinol Organic Oil">Retinol Organic Oil</option>
           <option value="Almond Organic Oil">Almond Organic Oil</option>
-          <option value="Carrot Organic Oil">Carrot Organic Oil</option>
           <option value="Intensive Glow Serum">Intensive Glow Serum</option>
           <option value="Turmeric Soap">Turmeric Organic & Glow Soap</option>
           <option value="Glutathione & Kojic Soap">Glutathione & Kojic Soap</option>
