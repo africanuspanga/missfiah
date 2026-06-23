@@ -17,6 +17,7 @@ import {
 import {
   BUSINESS,
   CATEGORIES,
+  ALL_PRODUCTS,
   WHY_CHOOSE,
   HOW_TO_ORDER,
   BLOG_POSTS,
@@ -308,16 +309,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Popular Products Section */}
+      {/* Shop Our Products Section */}
       <section className="bg-gradient-to-b from-stone-50 to-white py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="mb-16 flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
             <div>
               <span className="mb-3 inline-block text-sm font-semibold uppercase tracking-wider text-brand">
-                Popular Products
+                Shop Now
               </span>
               <h2 className="font-serif text-3xl font-bold text-stone-900 sm:text-4xl lg:text-5xl">
-                Customer Favorites
+                Shop Our Products
               </h2>
             </div>
             <Link
@@ -330,7 +331,7 @@ export default function HomePage() {
           </AnimatedSection>
 
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {CATEGORIES.find((c) => c.id === "organic-oil")?.products.map((product, i) => (
+            {ALL_PRODUCTS.map((product, i) => (
               <ProductCard key={product.id} product={product} index={i} />
             ))}
           </div>
