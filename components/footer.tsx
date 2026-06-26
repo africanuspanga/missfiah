@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { MapPin } from "lucide-react";
 import { NAV_LINKS, BUSINESS, CATEGORIES } from "@/lib/data";
-import { InstagramIcon } from "@/components/icons";
+import { InstagramIcon, FacebookIcon, TikTokIcon } from "@/components/icons";
 
 export function Footer() {
   return (
@@ -50,6 +50,24 @@ export function Footer() {
                 aria-label="Instagram"
               >
                 <InstagramIcon size={18} />
+              </a>
+              <a
+                href={BUSINESS.facebookLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-[#1877F2]"
+                aria-label="Facebook"
+              >
+                <FacebookIcon size={18} />
+              </a>
+              <a
+                href={BUSINESS.tiktokLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-black hover:ring-1 hover:ring-white/20"
+                aria-label="TikTok"
+              >
+                <TikTokIcon size={18} />
               </a>
             </div>
           </div>
@@ -128,6 +146,28 @@ export function Footer() {
                 >
                   <InstagramIcon size={18} className="text-brand" />
                   <span>Instagram: {BUSINESS.instagram}</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href={BUSINESS.facebookLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-sm text-stone-400 transition-colors hover:text-white"
+                >
+                  <FacebookIcon size={18} className="text-[#1877F2]" />
+                  <span>Facebook: {BUSINESS.facebook}</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href={BUSINESS.tiktokLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-sm text-stone-400 transition-colors hover:text-white"
+                >
+                  <TikTokIcon size={18} />
+                  <span>TikTok: {BUSINESS.tiktok}</span>
                 </a>
               </li>
             </ul>

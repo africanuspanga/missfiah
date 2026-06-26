@@ -8,7 +8,7 @@ import {
 } from "@/components/animated-section";
 import { ContactForm } from "@/components/contact-form";
 import { WhatsAppButton } from "@/components/whatsapp-button";
-import { InstagramIcon } from "@/components/icons";
+import { InstagramIcon, FacebookIcon, TikTokIcon } from "@/components/icons";
 import { CTASection } from "@/components/cta-section";
 
 export const metadata: Metadata = {
@@ -149,6 +149,38 @@ export default function ContactPage() {
                             className="transition-colors hover:text-brand"
                           >
                             {BUSINESS.instagram}
+                          </a>
+                        </div>
+                      </li>
+                      <li className="flex items-start gap-3 text-sm text-stone-600">
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#1877F2]/10 text-[#1877F2]">
+                          <FacebookIcon size={18} />
+                        </div>
+                        <div>
+                          <p className="font-semibold text-stone-900">Facebook</p>
+                          <a
+                            href={BUSINESS.facebookLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="transition-colors hover:text-brand"
+                          >
+                            {BUSINESS.facebook}
+                          </a>
+                        </div>
+                      </li>
+                      <li className="flex items-start gap-3 text-sm text-stone-600">
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-stone-900/10 text-stone-900">
+                          <TikTokIcon size={18} />
+                        </div>
+                        <div>
+                          <p className="font-semibold text-stone-900">TikTok</p>
+                          <a
+                            href={BUSINESS.tiktokLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="transition-colors hover:text-brand"
+                          >
+                            {BUSINESS.tiktok}
                           </a>
                         </div>
                       </li>

@@ -153,7 +153,7 @@ export default function HomePage() {
                 <div className="absolute inset-0 rounded-[2.5rem] bg-gradient-to-br from-brand/20 to-gold/20 blur-xl" />
                 <div className="relative aspect-[4/3] overflow-hidden rounded-[2.5rem] bg-white p-2 shadow-xl shadow-stone-200/50 ring-1 ring-stone-100">
                   <Image
-                    src="/About us section of homepage.jpeg"
+                    src="/about-us.png"
                     alt="About Missfiah Organic Products"
                     fill
                     className="rounded-[2rem] object-cover"
@@ -210,7 +210,6 @@ export default function HomePage() {
 
           <StaggerContainer className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {CATEGORIES.map((category) => {
-              const featuredImage = category.products.find((p) => p.image)?.image;
               return (
                 <StaggerItem key={category.id}>
                   <Link
@@ -218,9 +217,9 @@ export default function HomePage() {
                     className="group flex h-full flex-col overflow-hidden rounded-3xl bg-white shadow-sm shadow-stone-200/50 ring-1 ring-stone-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-stone-200/60 hover:ring-brand/20"
                   >
                     <div className="relative flex aspect-[4/3] items-center justify-center bg-gradient-to-br from-stone-50 to-stone-100 p-4">
-                      {featuredImage ? (
+                      {category.image ? (
                         <Image
-                          src={featuredImage}
+                          src={category.image}
                           alt={category.title}
                           fill
                           className="object-contain p-4 transition-transform duration-500 group-hover:scale-105"

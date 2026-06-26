@@ -18,6 +18,7 @@ export type Category = {
   id: string;
   title: string;
   description: string;
+  image: string;
   products: Product[];
 };
 
@@ -40,12 +41,16 @@ export const BUSINESS = {
   whatsappLink: "https://wa.me/+255679294595",
   instagram: "@missfiahproducts_",
   instagramLink: "https://instagram.com/missfiahproducts_",
+  facebook: "@missfiahproducts_",
+  facebookLink: "https://www.facebook.com/profile.php?id=61576512292381",
+  tiktok: "@missfiahproducts_",
+  tiktokLink: "https://www.tiktok.com/@missfiahproducts_",
   year: 2026,
   logo: "/Logo.png",
   favicon: "/the-favicon.png",
   whatsappLogo: "/whatsapp.png",
   heroVideo: "/Background video.mp4",
-  aboutImage: "/About us page.jpeg",
+  aboutImage: "/About us section of homepage.jpeg",
 };
 
 export const UNIFORM_PRICE = 50000;
@@ -56,6 +61,7 @@ export const CATEGORIES: Category[] = [
     title: "Missfiah Organic Oil",
     description:
       "Our signature body oil collection comes in different variants for different skincare needs and preferences.",
+    image: "/category-oils.png",
     products: [
       {
         id: "vitamin-c-oil",
@@ -66,7 +72,7 @@ export const CATEGORIES: Category[] = [
         description:
           "A Vitamin C-inspired body oil for customers who want a fresh, bright, and glowing skin routine.",
         popular: true,
-        image: "/Missfiah Organic Oil.png",
+        image: "/product-oil-vitamins.png",
       },
       {
         id: "24k-gold-oil",
@@ -77,7 +83,7 @@ export const CATEGORIES: Category[] = [
         description:
           "A premium body oil option with a luxurious gold-inspired skincare feel.",
         popular: true,
-        image: "/missfiah 24k gold.png",
+        image: "/product-oil-24k-gold.png",
       },
       {
         id: "retinol-oil",
@@ -87,7 +93,7 @@ export const CATEGORIES: Category[] = [
         price: UNIFORM_PRICE,
         description:
           "A Retinol-inspired body oil designed for customers who prefer advanced-looking beauty care products.",
-        image: "/missfiah retinol.png",
+        image: "/product-oil-retinol.png",
       },
       {
         id: "almond-oil",
@@ -97,7 +103,7 @@ export const CATEGORIES: Category[] = [
         price: UNIFORM_PRICE,
         description:
           "A nourishing face and body oil that helps moisturize, soften and condition dry-looking skin. Ideal for daily body care and massage, it leaves the skin feeling smooth, supple and naturally radiant.",
-        image: "/Missfiah-almond.png",
+        image: "/product-oil-almond.png",
       },
     ],
   },
@@ -106,6 +112,7 @@ export const CATEGORIES: Category[] = [
     title: "Missfiah Organic Glow Serum",
     description:
       "A beauty serum designed for people who want a glowing, smooth, and radiant skin appearance.",
+    image: "/category-serum.png",
     products: [
       {
         id: "intensive-glow-serum",
@@ -124,6 +131,7 @@ export const CATEGORIES: Category[] = [
     title: "Missfiah Organic & Glow Soap",
     description:
       "Our soap collection is designed for daily cleansing and body care, with options inspired by popular skincare ingredients.",
+    image: "/category-soaps.png",
     products: [
       {
         id: "turmeric-soap",
@@ -133,7 +141,7 @@ export const CATEGORIES: Category[] = [
         description:
           "A turmeric-inspired soap for customers who enjoy natural-looking body care routines.",
         popular: true,
-        image: "/soap- tumeric-Photoroom.png",
+        image: "/product-soap-turmeric.png",
       },
       {
         id: "glutathione-kojic-soap",
@@ -142,7 +150,7 @@ export const CATEGORIES: Category[] = [
         price: UNIFORM_PRICE,
         description:
           "A soap option inspired by Glutathione and Kojic beauty care routines.",
-        image: "/soap-intesive glow-Photoroom.png",
+        image: "/product-soap-intensive-glow.png",
       },
     ],
   },
@@ -151,6 +159,7 @@ export const CATEGORIES: Category[] = [
     title: "Missfiah Shower Gel",
     description:
       "Missfiah Shower Gels are made for refreshing daily showers and a clean, smooth, and beautiful body care experience.",
+    image: "/category-showergels.png",
     products: [
       {
         id: "glow-brightening-shower-gel",
@@ -159,7 +168,7 @@ export const CATEGORIES: Category[] = [
         price: UNIFORM_PRICE,
         description:
           "A refreshing shower gel for customers who want a clean and glowing body care routine.",
-        image: "/showergel 3- Glow and Brightening.png",
+        image: "/product-showergel-glow-brightening.png",
       },
       {
         id: "pretty-polishing-body-wash",
@@ -168,7 +177,7 @@ export const CATEGORIES: Category[] = [
         price: UNIFORM_PRICE,
         description:
           "A polishing body wash designed to leave the skin feeling fresh, clean, and smooth.",
-        image: "/showergel 1- pretty and polishing.png",
+        image: "/product-showergel-pretty-polishing.png",
       },
       {
         id: "vitamin-c-shower-gel",
@@ -178,7 +187,7 @@ export const CATEGORIES: Category[] = [
         description:
           "A Vitamin C-inspired shower gel for customers who prefer brightening body care products.",
         popular: true,
-        image: "/Showergel 2- vitamin c.png",
+        image: "/product-showergel-vitamin-c.png",
       },
     ],
   },
@@ -865,7 +874,7 @@ export const missfiahOrganicOils: MissfiahOrganicOil[] = [
     slug: "vitamin-c-organic-oil",
     name: "Vitamin C Organic Oil",
     category: "Organic Oil",
-    image: "/Missfiah Organic Oil.png",
+    image: "/product-oil-vitamins.png",
     priceTzs: null,
     size: "300 ml / 11 fl oz",
     popular: true,
@@ -931,7 +940,7 @@ export const missfiahOrganicOils: MissfiahOrganicOil[] = [
     slug: "24k-gold-organic-oil",
     name: "24K Gold Organic Oil",
     category: "Organic Oil",
-    image: "/missfiah 24k gold.png",
+    image: "/product-oil-24k-gold.png",
     priceTzs: null,
     size: "300 ml / 11 fl oz",
     popular: true,
@@ -1006,7 +1015,7 @@ export const missfiahOrganicOils: MissfiahOrganicOil[] = [
     slug: "retinol-organic-oil",
     name: "Retinol Organic Oil",
     category: "Organic Oil",
-    image: "/missfiah retinol.png",
+    image: "/product-oil-retinol.png",
     priceTzs: null,
     size: "300 ml / 11 fl oz",
     popular: true,
@@ -1084,7 +1093,7 @@ export const missfiahOrganicOils: MissfiahOrganicOil[] = [
     slug: "almond-organic-oil",
     name: "Almond Organic Oil",
     category: "Organic Oil",
-    image: "/Missfiah-almond.png",
+    image: "/product-oil-almond.png",
     priceTzs: null,
     size: "300 ml / 11 fl oz",
     popular: false,

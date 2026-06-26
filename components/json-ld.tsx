@@ -12,7 +12,11 @@ export function JsonLd() {
     logo: `${siteUrl}${BUSINESS.logo}`,
     description:
       "Organic-inspired beauty and skincare products based in Kariakoo, Dar es Salaam, Tanzania.",
-    sameAs: [BUSINESS.instagramLink],
+    sameAs: [
+      BUSINESS.instagramLink,
+      BUSINESS.facebookLink,
+      BUSINESS.tiktokLink,
+    ],
     contactPoint: [
       {
         "@type": "ContactPoint",
